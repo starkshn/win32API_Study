@@ -1,0 +1,12 @@
+﻿  CMonster.cpp
+  CMissile.cpp
+  main.cpp
+  CPlayer.cpp
+  MonsterMissile.cpp
+  Resources.cpp
+  Sound.cpp
+  StartScene.cpp
+C:\Users\stark\Desktop\CPP\WinApiStudy\Client\CScene.h(36,1): warning C4150: 불완전한 형식 'CObject'에 대한 포인터를 삭제했습니다. 소멸자가 호출되지 않습니다.
+C:\Users\stark\Desktop\CPP\WinApiStudy\Client\CScene.h(3): message : 'CObject' 선언을 참조하십시오.
+  Texture.cpp
+  Client.vcxproj -> C:\Users\stark\Desktop\CPP\WinApiStudy\x64\Debug\Client.exe

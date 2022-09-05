@@ -1,0 +1,111 @@
+#include "pch.h"
+#include "CPlayer.h"
+#include "CKeyManager.h"
+#include "CTimeManager.h"
+#include "CMissile.h"
+#include "CCharingMissile.h"
+#include "ThreeMissile.h"
+#include "CSceneManager.h"
+#include "CScene.h"
+
+void CPlayer::update()
+{
+	Vector2 pos = GetPos();
+
+	if ( KEY_HOLD(KEY::W) )
+	{
+		pos._y -= 200.f * DeltaTime_F;
+	}
+	if (KEY_HOLD(KEY::S))
+	{
+		pos._y += 200.f * DeltaTime_F;
+	}
+	if (KEY_HOLD(KEY::A))
+	{
+		pos._x -= 200.f * DeltaTime_F;
+	}
+	if (KEY_HOLD(KEY::D))
+	{
+		pos._x += 200.f * DeltaTime_F;
+	}
+
+	// Missile
+	if (KEY_TAP(KEY::Z))
+	{
+		CreateMissile();
+	}
+	if (KEY_TAP(KEY::SPACE))
+	{
+		CreateThreeMissile();
+	}
+
+	SetPos(pos);
+}
+
+void CPlayer::CreateMissile()
+{
+	Vector2 playerPos = GetPos();
+	
+	// 미사일 생성
+	CMissile* missile = new CMissile();
+
+	// 미사일 방향
+	missile->SetTheta(PI / 2.f);
+	/*missile->SetDir(Vector2{-1.f, -7.f});*/
+
+	// 미사일 크기
+	missile->SetScale(Vector2(25.f, 25.f));
+
+	// 미사일 위치
+	playerPos._y -= (GetScale()._y / 2.f) + (missile->GetScale()._y / 2.f);
+	missile->SetPos(playerPos);
+	
+	CScene* curScene = CSceneManager::GetInstance()->GetcurScene();
+	curScene->AddObject(missile, GROUP_TYPE::MISSILE);
+}
+
+void CPlayer::CreateThreeMissile()
+{
+	Vector2 playerPos = GetPos();
+
+	// 미사일 생성
+	ThreeMissile* missile1 = new ThreeMissile();
+	ThreeMissile* missile2 = new ThreeMissile();
+	ThreeMissile* missile3 = new ThreeMissile();
+
+	// 미사일 크기
+	missile1->SetScale(Vector2(25.f, 25.f));
+	missile2->SetScale(Vector2(25.f, 25.f));
+	missile3->SetScale(Vector2(25.f, 25.f));
+
+	// 미사일 위치
+	playerPos._y -= (GetScale()._y / 2.f) + (missile1->GetScale()._y / 2.f);
+	missile1->SetPos(playerPos);
+
+	playerPos._x -= (missile2->GetScale()._x);
+	missile2->SetPos(playerPos);
+
+	playerPos._x += (missile2->GetScale()._x) + (missile3->GetScale()._x);
+	missile3->SetPos(playerPos);
+	
+	int id = 0;
+	missile1->SetId(id);
+	missile2->SetId(++id);
+	missile3->SetId(++id);
+
+	CScene* curScene = CSceneManager::GetInstance()->GetcurScene();
+
+	curScene->AddObject(missile1, GROUP_TYPE::THREEMISSILE);
+	curScene->AddObject(missile2, GROUP_TYPE::THREEMISSILE);
+	curScene->AddObject(missile3, GROUP_TYPE::THREEMISSILE);
+}
+
+void CPlayer::ChargingMissile()
+{
+}
+
+void CPlayer::ShootMissile()
+{
+	
+}
+
