@@ -15,5 +15,8 @@ using std::vector;
 using std::string;
 using std::wstring;
 
+// image
+#pragma comment(lib, "Msimg32.lib")
+
 
 

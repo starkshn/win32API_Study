@@ -10,7 +10,7 @@ private:
 	HDC			_hDC; // 메인 윈도우에 Draw할 DC
 
 	HBITMAP		_hBitmap;
-	HDC				_memDC;
+	HDC			_memDC;
 
 public:
 	int init(HWND hWnd, POINT resolution);
@@ -23,4 +23,5 @@ private:
 public :
 	HWND	GetMainHwnd() { return _hWnd; }
 	POINT	GetResolution() { return _resolution; }
+	HDC		GetMainDC() { return _hDC; }
 };

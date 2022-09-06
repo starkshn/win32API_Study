@@ -27,14 +27,14 @@ public :
 	{
 		_objects[static_cast<unsigned int>(type)].push_back(obj);
 	}
-	void EraseObject(CObject* go, GROUP_TYPE type)
-	{
-		auto typeVector = _objects[static_cast<UINT>(type)];
-		for (int i = 0; i < typeVector.size(); ++i)
-		{
-			if (typeVector[i] == go)
-				delete go;
-		}
-	}
+	//void EraseObject(CObject* go, GROUP_TYPE type)
+	//{
+	//	auto typeVector = _objects[static_cast<UINT>//(type)];
+	//	for (int i = 0; i < typeVector.size(); ++i)
+	//	{
+	//		if (typeVector[i] == go)
+	//			delete go;
+	//	}
+	//}
 };
 

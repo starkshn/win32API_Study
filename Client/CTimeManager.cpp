@@ -39,6 +39,7 @@ void CTimeManager::update()
 	// 이전 카운트 값을 현재 값으로 갱신(다음번의 계산을 위해서)
 	_prevCount = _curCount;
 
+	render();
 }
 
 void CTimeManager::render()

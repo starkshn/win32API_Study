@@ -7,6 +7,26 @@
 #include "ThreeMissile.h"
 #include "CSceneManager.h"
 #include "CScene.h"
+#include "Texture.h"
+#include "PathManager.h"
+
+CPlayer::CPlayer() : _myObject(nullptr)
+{
+	// Texture 로딩하기
+	_myObject = new Texture();
+
+	wstring filePath = PathManager::GetInstance()->GetContentsPath();
+	filePath += L"textures\\Plane2.bmp";
+	_myObject->Load(filePath);
+
+}
+CPlayer::~CPlayer()
+{
+	if (_myObject != nullptr)
+	{
+		delete _myObject;
+	}
+}
 
 void CPlayer::update()
 {
@@ -40,6 +60,37 @@ void CPlayer::update()
 	}
 
 	SetPos(pos);
+}
+
+void CPlayer::render(HDC dc)
+{
+	int width = static_cast<int>(_myObject->GetWidth());
+	int height = static_cast<int>(_myObject->GetHeight());
+
+	Vector2 pos = GetPos();
+
+	//BitBlt
+	//(
+	//	dc,
+	//	static_cast<int>(pos._x - static_cast<float>//((width / 2))),
+	//	static_cast<int>(pos._y - static_cast<float>//((height / 2))),
+	//	width,
+	//	height,
+	//	_myObject->GetDC(),
+	//	0, 0, SRCCOPY
+	//);
+
+	TransparentBlt
+	(
+		dc,
+		static_cast<int>(pos._x - static_cast<float>((width / 2))),
+		static_cast<int>(pos._y - static_cast<float>((height / 2))),
+		width,
+		height,
+		_myObject->GetDC(),
+		0, 0, width, height,
+		RGB(255, 0, 255)
+	);
 }
 
 void CPlayer::CreateMissile()
