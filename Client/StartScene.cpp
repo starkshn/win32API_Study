@@ -5,6 +5,8 @@
 #include "CMonster.h"
 #include "CCore.h"
 #include "CMissile.h"
+#include "PathManager.h"
+#include "Texture.h"
 
 StartScene::StartScene()
 {
@@ -19,6 +21,16 @@ StartScene::~StartScene()
 
 void StartScene::Enter()
 {
+	Texture* texture = new Texture();
+
+	wstring filePath = PathManager::GetInstance()->GetContentsPath();
+	filePath += L"textures\\apple.bmp";
+	texture->Load(filePath);
+
+
+	
+	delete texture;
+
 	// Object Ãß°¡
 	CObject* obj = new CPlayer();
 	obj->SetPos(Vector2(640.f, 384.f));

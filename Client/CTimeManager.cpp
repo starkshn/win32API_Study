@@ -39,6 +39,10 @@ void CTimeManager::update()
 	// 이전 카운트 값을 현재 값으로 갱신(다음번의 계산을 위해서)
 	_prevCount = _curCount;
 
+}
+
+void CTimeManager::render()
+{
 	++_callCount; // 1초가 된 순간의 값을 알아야한다.
 	_acc += _deltaTime; // DT누적
 
@@ -52,5 +56,4 @@ void CTimeManager::update()
 		swprintf_s(buffer, L"FPS : %d, DT : %f", _fps, _deltaTime);
 		SetWindowText(CCore::GetInstance()->GetMainHwnd(), buffer);
 	}
-
 }

@@ -2,7 +2,7 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
-      <FullPath>C:\Users\stark\Desktop\CPP\WinApiStudy\x64\Debug\Client.exe</FullPath>
+      <FullPath>C:\Users\stark\Desktop\CPP\WinApiStudy\Output\bin_Debug\Client.exe</FullPath>
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles />

@@ -1,0 +1,10 @@
+﻿  StartScene.cpp
+C:\Users\stark\Desktop\CPP\WinApiStudy\Client\CScene.h(36,1): warning C4150: 불완전한 형식 'CObject'에 대한 포인터를 삭제했습니다. 소멸자가 호출되지 않습니다.
+C:\Users\stark\Desktop\CPP\WinApiStudy\Client\CScene.h(3): message : 'CObject' 선언을 참조하십시오.
+  Texture.cpp
+  코드를 생성하고 있습니다.
+  0 of 297 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
+  코드를 생성했습니다.
+  Client.vcxproj -> C:\Users\stark\Desktop\CPP\WinApiStudy\Output\bin\Client.exe

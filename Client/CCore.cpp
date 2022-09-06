@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "CCore.h"
 #include "CObject.h"
+#include "PathManager.h"
 #include "CTimeManager.h"
 #include "CKeyManager.h"
 #include "CSceneManager.h"
@@ -42,6 +43,7 @@ int CCore::init(HWND hWnd, POINT resolution)
 	DeleteObject(hPrevBit);
 
 	// Manager ÃÊ±âÈ­
+	PathManager::GetInstance()->init();
 	CTimeManager::GetInstance()->init();
 	CKeyManager::GetInstance()->init();
 	CSceneManager::GetInstance()->init();
@@ -68,4 +70,6 @@ void CCore::progress()
 	CSceneManager::GetInstance()->render(_memDC);
 
 	BitBlt(_hDC, 0, 0, _resolution.x, _resolution.y, _memDC, 0, 0, SRCCOPY);
+
+	// CTimeManager::GetInstance()->render();
 }
