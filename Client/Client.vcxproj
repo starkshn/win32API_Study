@@ -160,6 +160,7 @@
     <ClInclude Include="pch.h" />
     <ClInclude Include="CPlayer.h" />
     <ClInclude Include="Resource.h" />
+    <ClInclude Include="ResourceManager.h" />
     <ClInclude Include="Resources.h" />
     <ClInclude Include="Sound.h" />
     <ClInclude Include="StartScene.h" />
@@ -189,6 +190,7 @@
     <ClCompile Include="CPlayer.cpp" />
     <ClCompile Include="MonsterMissile.cpp" />
     <ClCompile Include="PathManager.cpp" />
+    <ClCompile Include="ResourceManager.cpp" />
     <ClCompile Include="Resources.cpp" />
     <ClCompile Include="Sound.cpp" />
     <ClCompile Include="StartScene.cpp" />

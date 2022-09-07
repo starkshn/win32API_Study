@@ -2,6 +2,7 @@
 #include "CObject.h"
 
 class MonsterMissile;
+class Texture;
 
 class CMonster : public CObject
 {
@@ -13,12 +14,14 @@ private :
 	int						_id;
 	bool					_missileFire = false;
 	MonsterMissile*	_missile = nullptr;
+	Texture* _texture;
 public :
 	CMonster();
 	~CMonster();
 
 public :
-	virtual void update() override;
+	virtual void update() final;
+	virtual void render() final;
 
 public:
 	void CreateMonsterMissile();

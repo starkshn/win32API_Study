@@ -6,6 +6,7 @@
 #include "CSceneManager.h"
 #include "MonsterMissile.h"
 #include "CCore.h"
+#include "ResourceManager.h"
 
 CMonster::CMonster() 
 	: 
@@ -15,7 +16,7 @@ CMonster::CMonster()
 	_missile(nullptr),
 	_dir(1)
 {
-
+	_texture = ResourceManager::GetInstance()->LoadTexture(L"MonsterTexture", L"Textures\\monsterPlane.bmp");
 }
 
 CMonster::~CMonster()
@@ -61,6 +62,17 @@ void CMonster::update()
 	}
 
 	SetPos(curPos);
+}
+
+void CMonster::render()
+{
+	/*int width = static_cast<int>(_texture->GetWidth());
+	int height = static_cast<int>(_texture->GetHeight());
+
+	Vector2 pos = GetPos();*/
+
+
+
 }
 
 void CMonster::CreateMonsterMissile()
