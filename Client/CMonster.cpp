@@ -7,6 +7,7 @@
 #include "MonsterMissile.h"
 #include "CCore.h"
 #include "ResourceManager.h"
+#include "Texture.h"
 
 CMonster::CMonster() 
 	: 
@@ -17,6 +18,7 @@ CMonster::CMonster()
 	_dir(1)
 {
 	_texture = ResourceManager::GetInstance()->LoadTexture(L"MonsterTexture", L"Textures\\monsterPlane.bmp");
+	_missileTexture = ResourceManager::GetInstance()->LoadTexture(L"MonsterTexture", L"Textures\\missile.bmp");
 }
 
 CMonster::~CMonster()
@@ -43,64 +45,70 @@ void CMonster::update()
 
 	if (GetMonsterId() % 2 == 0)
 	{
-		if (GetMissileFire() == false)
-		{
-			CreateMonsterMissile();
-		}
-		
-		Vector2 missilePos = _missile->GetPos();
-
-		missilePos._y += 600.f * (PI / 2.f) * DeltaTime_F;
-		missilePos._x += 600.f * (PI / 2.f) * DeltaTime_F;
-
-		if (missilePos._y > CCore::GetInstance()->GetResolution().y)
+		if (GetMissileFire())
 		{
 			SetMissileFire(false);
+			CreateMonsterMissile();
 		}
-		
-		SetPos(missilePos);
 	}
+	
+	_acc += DeltaTime_F;
+
+	if (_acc >= 0.99f)
+	{
+		SetMissileFire(true);
+		_acc = 0.f;
+	}
+	else
+		SetMissileFire(false);
+
 
 	SetPos(curPos);
 }
 
-void CMonster::render()
+void CMonster::render(HDC dc)
 {
-	/*int width = static_cast<int>(_texture->GetWidth());
+	int width = static_cast<int>(_texture->GetWidth());
 	int height = static_cast<int>(_texture->GetHeight());
 
-	Vector2 pos = GetPos();*/
+	Vector2 pos = GetPos();
 
-
-
+	TransparentBlt
+	(
+		dc,
+		static_cast<int>(pos._x - static_cast<float>((width / 2))),
+		static_cast<int>(pos._y - static_cast<float>((height / 2))),
+		width,
+		height,
+		_texture->GetDC(),
+		0, 0, width, height,
+		RGB(255, 0, 255)
+	);
 }
 
 void CMonster::CreateMonsterMissile()
 {
-	SetMissileFire(true);
+	Vector2 monsterPos = GetPos();
+	Vector2 monsterScale = GetScale();
 
-	if (GetMissileFire())
-	{
-		Vector2 monsterPos = GetPos();
-		Vector2 monsterScale = GetScale();
+	// 미사일 생성
+	_missile = new MonsterMissile();
 
-		// 미사일 생성
-		_missile = new MonsterMissile();
+	// 미사일 크기
+	_missile->SetScale(Vector2(monsterScale._x / 2.f, monsterScale._y / 2.f));
 
-		// 미사일 크기
-		_missile->SetScale(Vector2(monsterScale._x / 2.f, monsterScale._y / 2.f));
+	// 미사일 위치
+	monsterPos._y += (GetScale()._y / 2.f) + (_missile->GetScale()._y / 2.f);
+	_missile->SetPos(monsterPos);
 
-		// 미사일 위치
-		monsterPos._y += (GetScale()._y / 2.f) + (_missile->GetScale()._y / 2.f);
-		_missile->SetPos(monsterPos);
+	//// 미사일 방향
+	//_missile->SetTheta(90.f);
+	//_missile->SetTheta(PI / 2.f);
+	_missile->SetDir(Vector2{ 0.f, 1.f });
 
-		//// 미사일 방향
-		//_missile->SetTheta(90.f);
-		_missile->SetTheta(PI / 2.f);
-
-		CScene* curScene = CSceneManager::GetInstance()->GetcurScene();
-		curScene->AddObject(_missile, GROUP_TYPE::MONSTERMISSILE);
-	}
+	CScene* curScene = CSceneManager::GetInstance()->GetcurScene();
+	curScene->AddObject(_missile, GROUP_TYPE::MONSTERMISSILE);
+	
 
 }
 

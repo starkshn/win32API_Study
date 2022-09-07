@@ -2,20 +2,23 @@
 #include "CScene.h"
 #include "CMonster.h"
 
+class Texture;
 
 class StartScene : public CScene
 {
 private:
-	virtual void Enter() final; 
-	virtual void Exit() final; 
-
-private:
 	int _monsterId = 1;
 	int _monsterCount;
+	Texture* _backGroundTexture;
 
 public:
 	StartScene();
 	virtual ~StartScene() override;
+
+private:
+	virtual void Enter() final;
+	virtual void Exit() final;
+	virtual void render(HDC dc) override;
 
 public:
 	void SetMonsterCount(int count) { _monsterCount = count; }

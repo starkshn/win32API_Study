@@ -9,6 +9,7 @@ class CPlayer : public CObject
 private:
 	float _chargeMS = 1.f;
 	Texture* _myObject;
+
 public :
 	CPlayer();
 	~CPlayer();

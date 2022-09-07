@@ -3,11 +3,13 @@
 #include "CMissile.h"
 
 class CPlayer;
+class Texture;
 
-class ThreeMissile : public CMissile
+class ThreeMissile : public CObject
 {
 private:
 	int			_id = 0;
+	Texture*	_missileTexture;
 
 public:
 	ThreeMissile();

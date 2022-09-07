@@ -12,16 +12,19 @@ private :
 	Vector2				_centerAnchor;
 	int						_dir; // 1, -1
 	int						_id;
-	bool					_missileFire = false;
+	bool					_missileFire = true;
+
 	MonsterMissile*	_missile = nullptr;
 	Texture* _texture;
+	Texture* _missileTexture;
 public :
 	CMonster();
 	~CMonster();
+	float _acc = 0.f;
 
 public :
-	virtual void update() final;
-	virtual void render() final;
+	virtual void update() override;
+	virtual void render(HDC dc) override;
 
 public:
 	void CreateMonsterMissile();

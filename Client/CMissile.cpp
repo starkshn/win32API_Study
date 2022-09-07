@@ -2,9 +2,10 @@
 #include "CMissile.h"
 #include "CTimeManager.h"
 
-CMissile::CMissile() : _theta(PI / 4.f), _dir(Vector2{1.f, 1.f})
+CMissile::CMissile()
 {
-	_dir.Normalize();
+	SetTheta(PI / 4.f);
+	SetDir(Vector2{0.f, 1.f});
 }
 CMissile::~CMissile()
 {
@@ -15,11 +16,11 @@ void CMissile::update()
 {
 	Vector2 pos = GetPos();
 
-	pos._x += 600.f * cosf(_theta) * DeltaTime_F;
-	pos._y -= 600.f * sinf(_theta) * DeltaTime_F;
+	/*pos._x += 600.f * cosf(_theta) * DeltaTime_F;
+	pos._y -= 600.f * sinf(_theta) * DeltaTime_F;*/
 
-	// pos._x += 600.f * _dir._x * DeltaTime_F;
-	// pos._y += 600.f * _dir._y * DeltaTime_F;
+	pos._x += 600.f * GetVector2Dir()._x * DeltaTime_F;
+	pos._y -= 600.f * GetVector2Dir()._y * DeltaTime_F;
 
 	SetPos(pos);
 }

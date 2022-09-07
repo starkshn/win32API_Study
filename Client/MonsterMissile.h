@@ -1,20 +1,25 @@
 #pragma once
 #include "CObject.h"
-#include "CMissile.h"
+#include "CMonster.h"
 
-class MonsterMissile : public CMissile
+class Texture;
+
+class MonsterMissile : public CMonster
 {
 private:
-	float		_dir; // 위 아래 방향
+private:
+	float		_theta; // 방향
+	Vector2		_dir;   // Vector
+	Texture* _monsterMissileTexture;
 
 public:
 	MonsterMissile();
 	~MonsterMissile();
 public:
-
+	
 private:
-	virtual void update() override;
-	virtual void render(HDC dc) override;
+	virtual void update() final;
+	virtual void render(HDC dc) final;
 
 };
 

@@ -7,10 +7,11 @@
 #include "CMissile.h"
 #include "PathManager.h"
 #include "Texture.h"
+#include "ResourceManager.h"
 
 StartScene::StartScene()
 {
-
+	_backGroundTexture = ResourceManager::GetInstance()->LoadTexture(L"BackGroundTexture", L"Textures\\BackGround3.bmp");
 }
 
 StartScene::~StartScene()
@@ -53,5 +54,23 @@ void StartScene::Enter()
 
 void StartScene::Exit()
 {
+
+}
+
+void StartScene::render(HDC dc)
+{
+	Vector2 resolution = CCore::GetInstance()->GetResolution();
+
+	BitBlt
+	(
+		dc,
+		0, 0,
+		resolution._x,
+		resolution._y,
+		_backGroundTexture->GetDC(),
+		0, 0, SRCCOPY
+	);
+
+	CScene::render(dc);
 
 }
