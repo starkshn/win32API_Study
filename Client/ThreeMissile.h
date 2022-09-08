@@ -9,7 +9,7 @@ class ThreeMissile : public CObject
 {
 private:
 	int			_id = 0;
-	Texture*	_missileTexture;
+	Texture*	p_missileTexture;
 
 public:
 	ThreeMissile();

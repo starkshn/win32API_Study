@@ -35,6 +35,7 @@ void CSceneManager::init()
 void CSceneManager::update()
 {
 	_curScene->update();
+	_curScene->finalUpdate();
 }
 
 void CSceneManager::render(HDC sceneDC)

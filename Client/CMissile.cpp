@@ -6,6 +6,7 @@ CMissile::CMissile()
 {
 	SetTheta(PI / 4.f);
 	SetDir(Vector2{0.f, 1.f});
+	CreateCollider();
 }
 CMissile::~CMissile()
 {

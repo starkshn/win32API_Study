@@ -7,8 +7,8 @@ class Texture;
 class CPlayer : public CObject
 {
 private:
-	float _chargeMS = 1.f;
-	Texture* _myObject;
+	float		_chargeMS = 1.f;
+	Texture*	p_myObject;
 
 public :
 	CPlayer();

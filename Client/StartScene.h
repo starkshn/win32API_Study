@@ -7,9 +7,9 @@ class Texture;
 class StartScene : public CScene
 {
 private:
-	int _monsterId = 1;
-	int _monsterCount;
-	Texture* _backGroundTexture;
+	int			_monsterId = 1;
+	int			_monsterCount;
+	Texture*	p_backGroundTexture;
 
 public:
 	StartScene();

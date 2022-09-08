@@ -15,7 +15,7 @@ void PathManager::init() // 경로 찾아내야한다.
 {
 	GetCurrentDirectory(255, _contentsPath);
 
-	int len = wcslen(_contentsPath);
+	int len = static_cast<int>(wcslen(_contentsPath));
 
 	for (int i = len - 1; i >= 0; --i)
 	{

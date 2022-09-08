@@ -31,6 +31,17 @@ void CScene::update()
 	}
 }
 
+void CScene::finalUpdate()
+{
+	for (UINT i = 0; i < static_cast<UINT>(GROUP_TYPE::END); ++i)
+	{
+		for (size_t j = 0; j < _objects[i].size(); ++j)
+		{
+			_objects[i][j]->finalUpdate();
+		}
+	}
+}
+
 void CScene::render(HDC dc)
 {	
 	for (unsigned int i = 0; i < static_cast<unsigned int>(GROUP_TYPE::END); ++i)

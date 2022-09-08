@@ -20,15 +20,6 @@
     <Filter Include="Engine\05. Resources">
       <UniqueIdentifier>{5a8cbab9-484c-48c1-9123-7c004f431d96}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Engine\05. Scenes">
-      <UniqueIdentifier>{7222f9b4-705a-470a-91b8-06458c5dbaae}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Engine\05. Scenes\StartScene">
-      <UniqueIdentifier>{eba19d37-920e-4622-92b2-da30aa833fe2}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Engine\05. Scenes\ToolScene">
-      <UniqueIdentifier>{77aafa75-2bff-4238-bcbd-35117b7ed0d1}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Engine\04 .Objects">
       <UniqueIdentifier>{a448f21c-023f-4e6c-b03a-bc6f848e4e81}</UniqueIdentifier>
     </Filter>
@@ -77,6 +68,18 @@
     <Filter Include="Engine\03. Managers\ResourceManager">
       <UniqueIdentifier>{f5d88efe-ebde-478f-92d0-6a204f37412d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\06. Scenes">
+      <UniqueIdentifier>{7222f9b4-705a-470a-91b8-06458c5dbaae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\06. Scenes\StartScene">
+      <UniqueIdentifier>{eba19d37-920e-4622-92b2-da30aa833fe2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\06. Scenes\ToolScene">
+      <UniqueIdentifier>{77aafa75-2bff-4238-bcbd-35117b7ed0d1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\07. Component">
+      <UniqueIdentifier>{d4a8cfd5-18da-468f-a650-f5cc24f0333c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CCore.h">
@@ -108,16 +111,16 @@
       <Filter>Engine\03. Managers\CTimeManager</Filter>
     </ClInclude>
     <ClInclude Include="CScene.h">
-      <Filter>Engine\05. Scenes</Filter>
+      <Filter>Engine\06. Scenes</Filter>
     </ClInclude>
     <ClInclude Include="CSceneManager.h">
       <Filter>Engine\03. Managers\SceneManager</Filter>
     </ClInclude>
     <ClInclude Include="ToolScene.h">
-      <Filter>Engine\05. Scenes\ToolScene</Filter>
+      <Filter>Engine\06. Scenes\ToolScene</Filter>
     </ClInclude>
     <ClInclude Include="StartScene.h">
-      <Filter>Engine\05. Scenes\StartScene</Filter>
+      <Filter>Engine\06. Scenes\StartScene</Filter>
     </ClInclude>
     <ClInclude Include="CPlayer.h">
       <Filter>Engine\04 .Objects\Player</Filter>
@@ -155,6 +158,9 @@
     <ClInclude Include="ResourceManager.h">
       <Filter>Engine\03. Managers\ResourceManager</Filter>
     </ClInclude>
+    <ClInclude Include="Collider.h">
+      <Filter>Engine\07. Component</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CCore.cpp">
@@ -171,16 +177,16 @@
       <Filter>Engine\03. Managers\CTimeManager</Filter>
     </ClCompile>
     <ClCompile Include="CScene.cpp">
-      <Filter>Engine\05. Scenes</Filter>
+      <Filter>Engine\06. Scenes</Filter>
     </ClCompile>
     <ClCompile Include="CSceneManager.cpp">
       <Filter>Engine\03. Managers\SceneManager</Filter>
     </ClCompile>
     <ClCompile Include="ToolScene.cpp">
-      <Filter>Engine\05. Scenes\ToolScene</Filter>
+      <Filter>Engine\06. Scenes\ToolScene</Filter>
     </ClCompile>
     <ClCompile Include="StartScene.cpp">
-      <Filter>Engine\05. Scenes\StartScene</Filter>
+      <Filter>Engine\06. Scenes\StartScene</Filter>
     </ClCompile>
     <ClCompile Include="CPlayer.cpp">
       <Filter>Engine\04 .Objects\Player</Filter>
@@ -214,6 +220,9 @@
     </ClCompile>
     <ClCompile Include="ResourceManager.cpp">
       <Filter>Engine\03. Managers\ResourceManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Collider.cpp">
+      <Filter>Engine\07. Component</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

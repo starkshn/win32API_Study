@@ -8,7 +8,9 @@
 
 ThreeMissile::ThreeMissile()
 {
-	_missileTexture = ResourceManager::GetInstance()->LoadTexture(L"MissileTexture", L"Textures\\missile.bmp");
+	p_missileTexture = ResourceManager::GetInstance()->LoadTexture(L"MissileTexture", L"Textures\\missile.bmp");
+
+	CreateCollider();
 
 	// BITMAP info = _missileTexture->GetInfo();
 
@@ -65,8 +67,8 @@ void ThreeMissile::render(HDC dc)
 	Vector2 pos = GetPos();
 	Vector2 scale = GetScale();
 
-	int width = static_cast<int>(_missileTexture->GetWidth());
-	int height = static_cast<int>(_missileTexture->GetHeight());
+	int width = static_cast<int>(p_missileTexture->GetWidth());
+	int height = static_cast<int>(p_missileTexture->GetHeight());
 
 	//Ellipse
 	//(	dc,
@@ -83,7 +85,7 @@ void ThreeMissile::render(HDC dc)
 		static_cast<int>(pos._y - static_cast<float>((height / 2))),
 		width,
 		height,
-		_missileTexture->GetDC(),
+		p_missileTexture->GetDC(),
 		0, 0, width, height,
 		RGB(255, 0, 255)
 	);

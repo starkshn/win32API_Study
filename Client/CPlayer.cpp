@@ -11,13 +11,15 @@
 #include "PathManager.h"
 #include "ResourceManager.h"
 
-CPlayer::CPlayer() : _myObject(nullptr)
+CPlayer::CPlayer() : p_myObject(nullptr)
 {
-	_myObject = ResourceManager::GetInstance()->LoadTexture(L"PlayerTexture", L"Textures\\Plane2.bmp");
+	p_myObject = ResourceManager::GetInstance()->LoadTexture(L"PlayerTexture", L"Textures\\Plane2.bmp");
+
+	CreateCollider();
 }
 CPlayer::~CPlayer()
 {
-
+	
 }
 
 void CPlayer::update()
@@ -56,8 +58,8 @@ void CPlayer::update()
 
 void CPlayer::render(HDC dc)
 {
-	int width = static_cast<int>(_myObject->GetWidth());
-	int height = static_cast<int>(_myObject->GetHeight());
+	int width = static_cast<int>(p_myObject->GetWidth());
+	int height = static_cast<int>(p_myObject->GetHeight());
 
 	Vector2 pos = GetPos();
 
@@ -79,10 +81,13 @@ void CPlayer::render(HDC dc)
 		static_cast<int>(pos._y - static_cast<float>((height / 2))),
 		width,
 		height,
-		_myObject->GetDC(),
+		p_myObject->GetDC(),
 		0, 0, width, height,
 		RGB(255, 0, 255)
 	);
+
+	// Component있는 경우 호출...
+	CObject::ComponentRender(dc);
 }
 
 void CPlayer::CreateMissile()

@@ -11,7 +11,7 @@
 
 StartScene::StartScene()
 {
-	_backGroundTexture = ResourceManager::GetInstance()->LoadTexture(L"BackGroundTexture", L"Textures\\BackGround3.bmp");
+	p_backGroundTexture = ResourceManager::GetInstance()->LoadTexture(L"BackGroundTexture", L"Textures\\BackGround3.bmp");
 }
 
 StartScene::~StartScene()
@@ -67,7 +67,7 @@ void StartScene::render(HDC dc)
 		0, 0,
 		resolution._x,
 		resolution._y,
-		_backGroundTexture->GetDC(),
+		p_backGroundTexture->GetDC(),
 		0, 0, SRCCOPY
 	);
 

@@ -28,6 +28,8 @@ public :
 	{}
 
 public :
+	
+public :
 	float Length()
 	{
 		return sqrt(_x * _x + _y * _y);
@@ -51,5 +53,23 @@ public :
 		_x = static_cast<float>(pt.x);
 		_y = static_cast<float>(pt.y);
 	}
+	Vector2 operator + (const Vector2& other)
+	{
+		return Vector2(_x + other._x, _y + other._y);
+	}
+	Vector2 operator - (const Vector2& other)
+	{
+		return Vector2(_x - other._x, _y - other._y);
+	}
+	Vector2 operator * (const Vector2& other)
+	{
+		return Vector2(_x * other._x, _y * other._y);
+	}
+	Vector2 operator / (const Vector2& other)
+	{
+		assert(!(0.f == other._x || 0.f == other._y));
+		return Vector2(_x / other._x, _y / other._y);
+	}
+
 
 };

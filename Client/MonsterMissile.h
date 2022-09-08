@@ -10,7 +10,7 @@ private:
 private:
 	float		_theta; // πÊ«‚
 	Vector2		_dir;   // Vector
-	Texture* _monsterMissileTexture;
+	Texture*	p_monsterMissileTexture;
 
 public:
 	MonsterMissile();

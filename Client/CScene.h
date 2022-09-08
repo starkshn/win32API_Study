@@ -8,7 +8,7 @@ class CScene
 private :
 	vector<CObject*> _objects[static_cast<unsigned int>(GROUP_TYPE::END)]; // 오브젝트들을 저장 및 관리할 벡터를 그룹 갯수만큼 선언
 	wstring		_sceneName;
-	Texture*	_backGroundTexture;
+	Texture*	p_backGroundTexture;
 
 public:
 	CScene();
@@ -19,6 +19,7 @@ public :
 	const wstring& GetName() const { return _sceneName; }
 
 	void update();
+	void finalUpdate();
 	virtual void render(HDC dc);
 
 	virtual void Enter() abstract; // 해당 Scene 에 진입시 호출
@@ -29,14 +30,5 @@ public :
 	{
 		_objects[static_cast<unsigned int>(type)].push_back(obj);
 	}
-	//void EraseObject(CObject* go, GROUP_TYPE type)
-	//{
-	//	auto typeVector = _objects[static_cast<UINT>//(type)];
-	//	for (int i = 0; i < typeVector.size(); ++i)
-	//	{
-	//		if (typeVector[i] == go)
-	//			delete go;
-	//	}
-	//}
 };
 

@@ -1,5 +1,6 @@
 #pragma once
 #include "CObject.h"
+#include "CTimeManager.h"
 
 class MonsterMissile;
 class Texture;
@@ -13,6 +14,7 @@ private :
 	int						_dir; // 1, -1
 	int						_id;
 	bool					_missileFire = true;
+	float _acc;
 
 	MonsterMissile*	_missile = nullptr;
 	Texture* _texture;
@@ -20,7 +22,6 @@ private :
 public :
 	CMonster();
 	~CMonster();
-	float _acc = 0.f;
 
 public :
 	virtual void update() override;
@@ -29,6 +30,21 @@ public :
 public:
 	void CreateMonsterMissile();
 
+	void MissileCoroutine(float deltaTime_f)
+	{
+		SetAcc(deltaTime_f);
+		
+		if (GetAcc() > 1.f)
+		{
+			SetMissileFire(true);
+			SetAcc(0.f);
+		}
+		else
+		{
+			SetMissileFire(false);
+		}
+	}
+
 public:
 	void SetSpeed(float speed) { _speed = speed; }
 	void SetCenterAnchor(Vector2 anchor) { _centerAnchor = anchor; }
@@ -36,11 +52,13 @@ public:
 	void SetMoveDistance(float dis) { _loopDistance = dis; }
 	void SetMonsterId(int id) { _id = id; }
 	void SetMissileFire(bool fire) { _missileFire = fire; }
-
+	void SetAcc(float deltaTime) { _acc += deltaTime; }
+	
 	float GetSpeed() { return _speed; }
 	Vector2 GetCenterAnchor() { return _centerAnchor; }
 	float GetLoopDistance() { return _loopDistance; }
 	int GetMonsterId() { return _id; }
 	bool GetMissileFire() { return _missileFire; }
+	float GetAcc() { return _acc; }
 };
 

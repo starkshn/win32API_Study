@@ -9,7 +9,8 @@
 
 MonsterMissile::MonsterMissile()
 {
-	_monsterMissileTexture = ResourceManager::GetInstance()->LoadTexture(L"MonsterMissile", L"Textures\\missile.bmp");
+	p_monsterMissileTexture = ResourceManager::GetInstance()->LoadTexture(L"MonsterMissile", L"Textures\\MonsterMissile.bmp");
+	CreateCollider();
 }
 
 MonsterMissile::~MonsterMissile()
@@ -35,8 +36,8 @@ void MonsterMissile::render(HDC dc)
 	Vector2 pos = GetPos();
 	Vector2 scale = GetScale();
 
-	int width = static_cast<int>(_monsterMissileTexture->GetWidth());
-	int height = static_cast<int>(_monsterMissileTexture->GetHeight());
+	int width = static_cast<int>(p_monsterMissileTexture->GetWidth());
+	int height = static_cast<int>(p_monsterMissileTexture->GetHeight());
 
 	TransparentBlt
 	(
@@ -45,7 +46,7 @@ void MonsterMissile::render(HDC dc)
 		static_cast<int>(pos._y - static_cast<float>((height / 2))),
 		width,
 		height,
-		_monsterMissileTexture->GetDC(),
+		p_monsterMissileTexture->GetDC(),
 		0, 0, width, height,
 		RGB(255, 0, 255)
 	);

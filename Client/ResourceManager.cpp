@@ -10,13 +10,14 @@ ResourceManager::ResourceManager()
 
 ResourceManager::~ResourceManager()
 {
+	// 1. 옛날방식
 	//map<wstring, Texture*>::iterator iter =_mapTexture.begin();
 	//for (; iter != _mapTexture.end(); ++iter)
 	//{
 	//	delete iter->second;
 	//}
 
-	// Functor 사용
+	// 2. Functor 사용
 	for_each(_mapTexture.begin(), _mapTexture.end(), DeleteTexture());
 }
 

@@ -15,10 +15,12 @@ CMonster::CMonster()
 	_loopDistance(50.f),
 	_centerAnchor{0.f, 0.f},
 	_missile(nullptr),
-	_dir(1)
+	_dir(1),
+	_acc(0.f)
 {
 	_texture = ResourceManager::GetInstance()->LoadTexture(L"MonsterTexture", L"Textures\\monsterPlane.bmp");
-	_missileTexture = ResourceManager::GetInstance()->LoadTexture(L"MonsterTexture", L"Textures\\missile.bmp");
+
+	CreateCollider();
 }
 
 CMonster::~CMonster()
@@ -43,11 +45,12 @@ void CMonster::update()
 		curPos._x += difDis * _dir;
 	}
 
+	// MissileCoroutine(DeltaTime_F);
+
 	if (GetMonsterId() % 2 == 0)
 	{
 		if (GetMissileFire())
 		{
-			SetMissileFire(false);
 			CreateMonsterMissile();
 		}
 	}
