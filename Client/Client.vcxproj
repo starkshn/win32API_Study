@@ -170,6 +170,7 @@
     <ClInclude Include="Texture.h" />
     <ClInclude Include="ThreeMissile.h" />
     <ClInclude Include="ToolScene.h" />
+    <ClInclude Include="SelectGDI.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CCore.cpp">
@@ -199,6 +200,7 @@
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="ThreeMissile.cpp" />
     <ClCompile Include="ToolScene.cpp" />
+    <ClCompile Include="SelectGDI.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Client.rc" />

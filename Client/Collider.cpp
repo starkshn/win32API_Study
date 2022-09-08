@@ -1,8 +1,10 @@
 #include "pch.h"
 #include "Collider.h"
 #include "CObject.h"
+#include "CCore.h"
+#include "SelectGDI.h"
 
-Collider::Collider()
+Collider::Collider() : p_owner(nullptr)
 {
 
 }
@@ -21,5 +23,15 @@ void Collider::finalUpdate()
 
 void Collider::render(HDC dc)
 {
-	// finalUpdate끝나고 render작업 시작한다.
+	SelectGDI b(dc, HBRUSH_TYPE::HOLLOW);
+	SelectGDI p(dc, HPEN_TYPE::GREEN);
+
+	Rectangle
+	(
+		dc,
+		static_cast<int>(_finalPos._x - _colliderScale._x / 2.f),
+		static_cast<int>(_finalPos._y - _colliderScale._y / 2.f),
+		static_cast<int>(_finalPos._x + _colliderScale._x / 2.f),
+		static_cast<int>(_finalPos._y + _colliderScale._y / 2.f)
+	);
 }

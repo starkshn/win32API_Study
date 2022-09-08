@@ -33,6 +33,7 @@ public :
 	float GetTheta() { return _theta; }
 	Vector2 GetVector2Dir() { return _dir; }
 
+	Collider* GetCollider() { return p_collider; }
 
 };
 

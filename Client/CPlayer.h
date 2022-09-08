@@ -1,6 +1,7 @@
 #pragma once
 #include "CObject.h"
 #include "CCharingMissile.h"
+#include "Collider.h"
 
 class Texture;
 
@@ -21,12 +22,10 @@ public:
 public :
 	void CreateMissile();
 	void CreateThreeMissile();
-
 	void ChargingMissile();
 	void ShootMissile();
 
 public :
-
 	void SetChargeMS(float value) { _chargeMS = value; }
 	void AccChargeMS(float value) { _chargeMS += value; }
 

@@ -51,3 +51,19 @@ enum class MISSILE_TYPE
 	END = 8,
 };
 
+enum class HBRUSH_TYPE
+{
+	HOLLOW,
+
+	END,
+};
+
+enum class HPEN_TYPE
+{
+	RED,
+	GREEN,
+	BLUE,
+
+	END,
+};
+
