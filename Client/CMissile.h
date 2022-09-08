@@ -1,9 +1,13 @@
 #pragma once
 #include "CObject.h"
+
+class Texture;
+
 class CMissile : public CObject
 {
 private :
-	
+	Texture* p_cMissileTexture;
+
 public:
 	CMissile();
 	~CMissile();
