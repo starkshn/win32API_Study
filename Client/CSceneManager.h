@@ -18,7 +18,7 @@ public :
 	void render(HDC sceneDC);
 	
 public:
-	CScene* GetcurScene() { return _curScene; }
+	CScene* GetCurScene() { return _curScene; }
 
 };
 

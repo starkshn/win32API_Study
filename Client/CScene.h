@@ -30,5 +30,11 @@ public :
 	{
 		_objects[static_cast<unsigned int>(type)].push_back(obj);
 	}
+
+	const vector<CObject*>& GetGroupObjects(const GROUP_TYPE& type)
+	{
+		return _objects[static_cast<UINT>(type)];
+	}
+
 };
 

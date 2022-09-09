@@ -4,7 +4,7 @@
 #include "CCore.h"
 #include "SelectGDI.h"
 
-Collider::Collider() : p_owner(nullptr)
+Collider::Collider() : _id(g_id++), p_owner(nullptr)
 {
 
 }

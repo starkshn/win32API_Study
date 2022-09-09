@@ -114,7 +114,7 @@ void CMonster::CreateMonsterMissile()
 	//_missile->SetTheta(PI / 2.f);
 	_missile->SetDir(Vector2{ 0.f, 1.f });
 
-	CScene* curScene = CSceneManager::GetInstance()->GetcurScene();
+	CScene* curScene = CSceneManager::GetInstance()->GetCurScene();
 	curScene->AddObject(_missile, GROUP_TYPE::MONSTERMISSILE);
 	
 

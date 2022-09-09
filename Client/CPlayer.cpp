@@ -111,7 +111,7 @@ void CPlayer::CreateMissile()
 	playerPos._y -= (GetScale()._y / 2.f) + (missile->GetScale()._y / 2.f);
 	missile->SetPos(playerPos);
 	
-	CScene* curScene = CSceneManager::GetInstance()->GetcurScene();
+	CScene* curScene = CSceneManager::GetInstance()->GetCurScene();
 	curScene->AddObject(missile, GROUP_TYPE::MISSILE);
 }
 
@@ -144,7 +144,7 @@ void CPlayer::CreateThreeMissile()
 	missile2->SetId(++id);
 	missile3->SetId(++id);
 
-	CScene* curScene = CSceneManager::GetInstance()->GetcurScene();
+	CScene* curScene = CSceneManager::GetInstance()->GetCurScene();
 
 	curScene->AddObject(missile1, GROUP_TYPE::THREEMISSILE);
 	curScene->AddObject(missile2, GROUP_TYPE::THREEMISSILE);
