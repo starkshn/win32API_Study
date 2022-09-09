@@ -83,6 +83,9 @@
     <Filter Include="Engine\08. Util">
       <UniqueIdentifier>{3b645402-20a1-463c-a638-90aefe188690}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\03. Managers\CollierManager">
+      <UniqueIdentifier>{397f697e-6feb-4b71-b5a8-76b2057fb02b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CCore.h">
@@ -167,6 +170,9 @@
     <ClInclude Include="SelectGDI.h">
       <Filter>Engine\08. Util</Filter>
     </ClInclude>
+    <ClInclude Include="ColliderManager.h">
+      <Filter>Engine\03. Managers\CollierManager</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CCore.cpp">
@@ -232,6 +238,9 @@
     </ClCompile>
     <ClCompile Include="SelectGDI.cpp">
       <Filter>Engine\08. Util</Filter>
+    </ClCompile>
+    <ClCompile Include="ColliderManager.cpp">
+      <Filter>Engine\03. Managers\CollierManager</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

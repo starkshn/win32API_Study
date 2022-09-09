@@ -8,6 +8,7 @@
 #include "CCore.h"
 #include "ResourceManager.h"
 #include "Texture.h"
+#include "Collider.h"
 
 CMonster::CMonster() 
 	: 
@@ -21,6 +22,7 @@ CMonster::CMonster()
 	_texture = ResourceManager::GetInstance()->LoadTexture(L"MonsterTexture", L"Textures\\monsterPlane.bmp");
 
 	CreateCollider();
+	GetCollider()->SetColliderScale(Vector2{40.f, 40.f});
 }
 
 CMonster::~CMonster()
@@ -87,6 +89,9 @@ void CMonster::render(HDC dc)
 		0, 0, width, height,
 		RGB(255, 0, 255)
 	);
+
+	// Component있는 경우 호출...
+	CObject::ComponentRender(dc);
 }
 
 void CMonster::CreateMonsterMissile()

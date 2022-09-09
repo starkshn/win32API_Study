@@ -17,8 +17,8 @@ CPlayer::CPlayer() : p_myObject(nullptr)
 	p_myObject = ResourceManager::GetInstance()->LoadTexture(L"PlayerTexture", L"Textures\\Plane2.bmp");
 
 	CreateCollider();
-	GetCollider()->SetOffsetPos(Vector2{100.f, 0.f});
-	GetCollider()->SetColliderScale(Vector2{ 100.f, 100.f });
+	GetCollider()->SetOffsetPos(Vector2{0.f, 5.f});
+	GetCollider()->SetColliderScale(Vector2{ 30.f, 30.f });
 }
 CPlayer::~CPlayer()
 {

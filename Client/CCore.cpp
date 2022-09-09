@@ -5,6 +5,7 @@
 #include "CTimeManager.h"
 #include "CKeyManager.h"
 #include "CSceneManager.h"
+#include "ColliderManager.h"
 
 CCore::CCore()
 	:
@@ -66,9 +67,10 @@ void CCore::progress()
 	// Managers update
 	CTimeManager::GetInstance()->update(); // DT계산
 	CKeyManager::GetInstance()->update(); // Key상태값 체크
-
 	// Scene Update
 	CSceneManager::GetInstance()->update();
+	// 충돌체크
+	ColliderManager::GetInstance()->update();
 
 	// --------------------
 	// Randering...

@@ -31,15 +31,13 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance
 
     // Memory Leak 찾기
     _CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
-    //_CrtSetBreakAlloc(281);
+    //_CrtSetBreakAlloc(268);
     //_CrtSetBreakAlloc(280);
     //_CrtSetBreakAlloc(279);
     //_CrtSetBreakAlloc(278);
 
     // {281} {280} {279} {278} {277} {218}
     // _crtBreakAlloc : 나중에 문제 생겼을 때 문제 해당지점을 잡아주는 기능
-
-    new int;
 
     // TODO: 여기에 코드를 입력합니다.
 

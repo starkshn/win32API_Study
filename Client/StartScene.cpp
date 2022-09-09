@@ -8,6 +8,7 @@
 #include "PathManager.h"
 #include "Texture.h"
 #include "ResourceManager.h"
+#include "ColliderManager.h"
 
 StartScene::StartScene()
 {
@@ -50,11 +51,18 @@ void StartScene::Enter()
 		monster->SetMonsterId(_monsterId++);
 		AddObject(monster, GROUP_TYPE::MONSTER);
 	}
+
+	// 충돌 지정
+	// Player 그룹과 Monster그룹 간의 충돌체크 ( Plyaer그룹과 Monster그룹이 충돌할 것이라고 알린다)
+	ColliderManager::GetInstance()->CheckGroup(GROUP_TYPE::PLAYER, GROUP_TYPE::MONSTER);
+	  
 }
 
 void StartScene::Exit()
 {
-
+	// 기존의 그룹의 충돌 그룹 해제(씬이 변경될 것이니까)
+	ColliderManager::GetInstance()->ResetGroup();
+	
 }
 
 void StartScene::render(HDC dc)
