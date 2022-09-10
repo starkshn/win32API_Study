@@ -14,7 +14,6 @@ private :
 	UINT				_callCount; // update 호출 횟수 체크
 	UINT				_fps; // 초당 호출 횟수
 	
-
 public :
 	void init();
 	void update();

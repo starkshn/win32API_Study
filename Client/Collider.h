@@ -2,8 +2,6 @@
 
 class CObject;
 
-UINT Collider::g_id = 0;
-
 class Collider
 {
 private:
@@ -18,11 +16,20 @@ private:
 
 public:
 	Collider();
+	Collider(const Collider& origin);
 	~Collider();
 
 public:
 	void finalUpdate();
 	void render(HDC dc);
+
+public :
+	// 충돌 시점 함수.
+	void OnCollisonStay(Collider* other); // 충돌중인 경우 호출되는 함수.
+	void OnCollisionEnter(Collider* other);
+	void OnCollisionExit(Collider* other);
+
+	Collider& operator = (const Collider& other) = delete;
 
 public:
 	void SetOffsetPos(Vector2 pos) { _offsetPos = pos; }
@@ -30,7 +37,9 @@ public:
 
 	Vector2 GetOffsetPos() { return _offsetPos; }
 	Vector2 GetColliderScale() { return _colliderScale; }
+	UINT GetID() { return _id; }
 
 	friend class CObject;
 };
 
+UINT Collider::g_id = 0;

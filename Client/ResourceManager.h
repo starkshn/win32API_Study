@@ -19,6 +19,8 @@ public:
 			if (pair.second != nullptr)
 				delete  pair.second;
 		}
+
+	private:
 	};
 }; 
 

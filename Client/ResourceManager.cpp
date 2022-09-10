@@ -18,7 +18,10 @@ ResourceManager::~ResourceManager()
 	//}
 
 	// 2. Functor 사용
-	for_each(_mapTexture.begin(), _mapTexture.end(), DeleteTexture());
+	// for_each(_mapTexture.begin(), _mapTexture.end(), DeleteTexture());
+
+	// 람다 사용
+	for_each(_mapTexture.begin(), _mapTexture.end(), [&](std::pair<wstring, Texture*> pair) { if (pair.second != nullptr) delete pair.second; });
 }
 
 Texture* ResourceManager::LoadTexture(const wstring& key, const wstring& path)

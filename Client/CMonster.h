@@ -8,17 +8,18 @@ class Texture;
 class CMonster : public CObject
 {
 private :
-	float					_speed;
-	float					_loopDistance;
-	Vector2				_centerAnchor;
-	int						_dir; // 1, -1
-	int						_id;
-	bool					_missileFire = true;
-	float _acc;
+	float			_speed;
+	float			_loopDistance;
+	float			_acc;
+	int				_dir; // 1, -1
+	int				_id;
+	bool			_missileFire = true;
+	Vector2			_centerAnchor;
 
 	MonsterMissile*	_missile = nullptr;
 	Texture* _texture;
 	Texture* _missileTexture;
+
 public :
 	CMonster();
 	~CMonster();
