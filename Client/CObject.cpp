@@ -11,7 +11,6 @@ CObject::CObject()
 	p_collider(nullptr)
 {
 
-
 }
 CObject::~CObject()
 {

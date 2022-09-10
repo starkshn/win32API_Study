@@ -4,6 +4,7 @@
 
 class MonsterMissile;
 class Texture;
+class Collider;
 
 class CMonster : public CObject
 {

@@ -4,14 +4,16 @@
 #include "CCore.h"
 #include "SelectGDI.h"
 
-Collider::Collider() : _id(g_id++), p_owner(nullptr)
+UINT Collider::g_ID = 0;
+
+Collider::Collider() : _ID(g_ID++), p_owner(nullptr), _colCount(0)
 {
 
 }
 
 Collider::Collider(const Collider& origin) 
 	: 
-	_id(g_id++),
+	_ID(g_ID++),
 	p_owner(nullptr),
 	_offsetPos(origin._offsetPos),
 	_colliderScale(origin._colliderScale)
@@ -30,12 +32,22 @@ void Collider::finalUpdate()
 	// 따라간다기 보다 바로 위치를 설정한다.
 	Vector2 objectPos = p_owner->GetPos();
 	_finalPos = objectPos + _offsetPos;
+
+	assert(0 <= _colCount);
 }
 
 void Collider::render(HDC dc)
 {
+	HPEN_TYPE pen = HPEN_TYPE::GREEN;
+
+	if (_colCount)
+	{
+		pen = HPEN_TYPE::RED;
+	}
+
+
 	SelectGDI b(dc, HBRUSH_TYPE::HOLLOW);
-	SelectGDI p(dc, HPEN_TYPE::GREEN);
+	SelectGDI p(dc, pen);
 
 	Rectangle
 	(
@@ -55,10 +67,10 @@ void Collider::OnCollisonStay(Collider* other)
 
 void Collider::OnCollisionEnter(Collider* other)
 {
-
+	++_colCount;
 }
 
 void Collider::OnCollisionExit(Collider* other)
 {
-
+	--_colCount;
 }

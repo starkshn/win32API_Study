@@ -34,7 +34,7 @@ void StartScene::Enter()
 	CMonster* monster = nullptr;
 
 	// 몬스터 배치
-	SetMonsterCount(16);
+	SetMonsterCount(4);
 	float moveDistance = 25.f;
 	float monsterScale = 50.f;
 
