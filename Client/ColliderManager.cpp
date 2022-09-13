@@ -129,15 +129,15 @@ void ColliderManager::CheckGroup(GROUP_TYPE left, GROUP_TYPE right)
 
 	if (col < row)
 	{
+		UINT temp = static_cast<UINT>(row);
 		row = static_cast<UINT>(col);
-		col = static_cast<UINT>(row);
+		col = temp;
 	}
 
 	if (_arrCheck[row] & (1 << col))
 		_arrCheck[row] &= ~(1 << col);
 	else
 		_arrCheck[row] |= (1 << col);
-
 }
 
 

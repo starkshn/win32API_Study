@@ -55,6 +55,8 @@ void StartScene::Enter()
 	// 충돌 지정
 	// Player 그룹과 Monster그룹 간의 충돌체크 ( Plyaer그룹과 Monster그룹이 충돌할 것이라고 알린다)
 	ColliderManager::GetInstance()->CheckGroup(GROUP_TYPE::PLAYER, GROUP_TYPE::MONSTER);
+
+	ColliderManager::GetInstance()->CheckGroup(GROUP_TYPE::PROJ_PLAYER, GROUP_TYPE::MONSTER);
 	  
 }
 

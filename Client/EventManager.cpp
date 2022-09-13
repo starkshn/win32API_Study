@@ -21,8 +21,9 @@ void EventManager::update()
 	// ================================================
 	for (size_t i = 0; i < _vecDead.size(); ++i)
 	{
-
+		delete _vecDead[i];
 	}
+
 	_vecDead.clear();
 
 	// =============
