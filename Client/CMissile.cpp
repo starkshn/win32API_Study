@@ -10,7 +10,7 @@ CMissile::CMissile()
 	SetDir(Vector2{0.f, 1.f});
 	CreateCollider();
 
-	p_cMissileTexture = ResourceManager::GetInstance()->LoadTexture(L"CMissile", L"Textures\\cMissile.bmp");
+	p_cMissileTexture = ResourceManager::GetInstance()->LoadTexture(L"CMissile", L"Textures\\gb_missile_1.bmp");
 }
 CMissile::~CMissile()
 {
@@ -59,7 +59,6 @@ void CMissile::render(HDC dc)
 		0, 0, width, height,
 		RGB(255, 0, 255)
 	);
-
 }
 
 

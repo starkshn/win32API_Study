@@ -68,6 +68,15 @@
     <Filter Include="Engine\03. Managers\ResourceManager">
       <UniqueIdentifier>{f5d88efe-ebde-478f-92d0-6a204f37412d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\07. Component">
+      <UniqueIdentifier>{d4a8cfd5-18da-468f-a650-f5cc24f0333c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\08. Util">
+      <UniqueIdentifier>{3b645402-20a1-463c-a638-90aefe188690}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\03. Managers\CollierManager">
+      <UniqueIdentifier>{397f697e-6feb-4b71-b5a8-76b2057fb02b}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Engine\06. Scenes">
       <UniqueIdentifier>{7222f9b4-705a-470a-91b8-06458c5dbaae}</UniqueIdentifier>
     </Filter>
@@ -77,14 +86,8 @@
     <Filter Include="Engine\06. Scenes\ToolScene">
       <UniqueIdentifier>{77aafa75-2bff-4238-bcbd-35117b7ed0d1}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Engine\07. Component">
-      <UniqueIdentifier>{d4a8cfd5-18da-468f-a650-f5cc24f0333c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Engine\08. Util">
-      <UniqueIdentifier>{3b645402-20a1-463c-a638-90aefe188690}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Engine\03. Managers\CollierManager">
-      <UniqueIdentifier>{397f697e-6feb-4b71-b5a8-76b2057fb02b}</UniqueIdentifier>
+    <Filter Include="Engine\03. Managers\EventManager">
+      <UniqueIdentifier>{01e77e51-aa61-403f-83c7-906457b76fea}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -173,6 +176,9 @@
     <ClInclude Include="ColliderManager.h">
       <Filter>Engine\03. Managers\CollierManager</Filter>
     </ClInclude>
+    <ClInclude Include="EventManager.h">
+      <Filter>Engine\03. Managers\EventManager</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CCore.cpp">
@@ -241,6 +247,9 @@
     </ClCompile>
     <ClCompile Include="ColliderManager.cpp">
       <Filter>Engine\03. Managers\CollierManager</Filter>
+    </ClCompile>
+    <ClCompile Include="EventManager.cpp">
+      <Filter>Engine\03. Managers\EventManager</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -52,7 +52,6 @@ void ColliderManager::CollisionGroupUpdate(GROUP_TYPE left, GROUP_TYPE right)
 			Collider* leftCollider = vecLeft[i]->GetCollider();
 			Collider* rightCollider = vecRight[j]->GetCollider();
 
-
 			// 두 충돌체 조합 아이디 생성
 			COLLIDER_ID id;
 			id._leftID = leftCollider->GetID();

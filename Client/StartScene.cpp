@@ -12,7 +12,7 @@
 
 StartScene::StartScene()
 {
-	p_backGroundTexture = ResourceManager::GetInstance()->LoadTexture(L"BackGroundTexture", L"Textures\\BackGround3.bmp");
+	p_backGroundTexture = ResourceManager::GetInstance()->LoadTexture(L"BackGroundTexture", L"Textures\\gb_gameSceneBackGround_1.bmp");
 }
 
 StartScene::~StartScene()

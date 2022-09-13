@@ -59,18 +59,21 @@ void Collider::render(HDC dc)
 	);
 }
 
-void Collider::OnCollisonStay(Collider* other)
-{
-
-}
-
-
 void Collider::OnCollisionEnter(Collider* other)
 {
+	p_owner->OnCollisionEnter(other);
+
 	++_colCount;
+}
+
+void Collider::OnCollisonStay(Collider* other)
+{
+	p_owner->OnCollisionStay(other);
 }
 
 void Collider::OnCollisionExit(Collider* other)
 {
+	p_owner->OnCollisionExit(other);
+
 	--_colCount;
 }

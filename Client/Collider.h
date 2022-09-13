@@ -2,7 +2,6 @@
 
 class CObject;
 
-
 class Collider
 {
 private:
@@ -42,6 +41,7 @@ public:
 	Vector2 GetColliderScale() { return _colliderScale; }
 	Vector2 GetFinalPos() { return _finalPos ; }
 	UINT GetID() { return _ID; }
+	CObject* GetOwner() { return p_owner; }
 	
 	friend class CObject;
 };

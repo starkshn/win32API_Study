@@ -8,12 +8,11 @@
 
 ThreeMissile::ThreeMissile()
 {
-	p_missileTexture = ResourceManager::GetInstance()->LoadTexture(L"MissileTexture", L"Textures\\missile.bmp");
+	p_missileTexture = ResourceManager::GetInstance()->LoadTexture(L"MissileTexture", L"Textures\\gb_missile_1.bmp");
 
 	CreateCollider();
-
-	// BITMAP info = _missileTexture->GetInfo();
-
+	GetCollider()->SetOffsetPos(Vector2{ 0.f, 0.f });
+	GetCollider()->SetColliderScale(Vector2{ 20.f, 20.f });
 }
 
 ThreeMissile::~ThreeMissile()
@@ -90,4 +89,6 @@ void ThreeMissile::render(HDC dc)
 		RGB(255, 0, 255)
 	);
 
+	// Component있는 경우 호출...
+	CObject::ComponentRender(dc);
 }

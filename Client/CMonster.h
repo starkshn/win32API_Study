@@ -30,6 +30,11 @@ public :
 	virtual void render(HDC dc) override;
 
 public:
+	virtual void OnCollisionEnter(Collider* other) override;
+	virtual void OnCollisionStay(Collider* other) override;
+	virtual void OnCollisionExit(Collider* other) override;
+
+public:
 	void CreateMonsterMissile();
 
 	void MissileCoroutine(float deltaTime_f)

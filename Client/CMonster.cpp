@@ -19,7 +19,7 @@ CMonster::CMonster()
 	_dir(1),
 	_acc(0.f)
 {
-	_texture = ResourceManager::GetInstance()->LoadTexture(L"MonsterTexture", L"Textures\\monsterPlane.bmp");
+	_texture = ResourceManager::GetInstance()->LoadTexture(L"MonsterTexture", L"Textures\\gb_monster_1.bmp");
 
 	CreateCollider();
 	GetCollider()->SetColliderScale(Vector2{40.f, 40.f});
@@ -32,7 +32,6 @@ CMonster::~CMonster()
 
 void CMonster::update()
 {
-	return;
 	Vector2 curPos = GetPos();
 
 	// 진행 방향으로 초당 _speed 만큼 이동
@@ -118,6 +117,21 @@ void CMonster::CreateMonsterMissile()
 	CScene* curScene = CSceneManager::GetInstance()->GetCurScene();
 	curScene->AddObject(_missile, GROUP_TYPE::MONSTERMISSILE);
 	
+}
+
+void CMonster::OnCollisionEnter(Collider* other)
+{
+	other->GetOwner();
+}
+
+void CMonster::OnCollisionStay(Collider* other)
+{	
 
 }
+
+void CMonster::OnCollisionExit(Collider* other)
+{
+	
+}
+
 

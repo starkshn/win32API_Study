@@ -4,7 +4,6 @@
 // Singletone
 #define SINGLE(type) public : static type* GetInstance() { static type mgr; return &mgr; } private : type(); ~type();
 
-
 #define DeltaTime_F CTimeManager::GetInstance()->GetfDeltaTime()
 #define DeltaTime CTimeManager::GetInstance()->GetDeltaTime()
 
@@ -67,3 +66,13 @@ enum class HPEN_TYPE
 	END,
 };
 
+// 지연처리 해야할 부분들
+enum class EVENT_TYPE
+{
+	CREATE_OBJECT,
+	DELETE_OBJECT,
+	SCENE_CHANGE,
+
+
+	END,
+};
