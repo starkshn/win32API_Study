@@ -15,7 +15,6 @@ CMonster::CMonster()
 	_speed(100.f), 
 	_loopDistance(50.f),
 	_centerAnchor{0.f, 0.f},
-	_missile(nullptr),
 	_dir(1),
 	_acc(0.f)
 {
@@ -67,7 +66,6 @@ void CMonster::update()
 	else
 		SetMissileFire(false);
 
-
 	SetPos(curPos);
 }
 
@@ -100,23 +98,22 @@ void CMonster::CreateMonsterMissile()
 	Vector2 monsterScale = GetScale();
 
 	// 미사일 생성
-	_missile = new MonsterMissile();
+	MonsterMissile* missile = new MonsterMissile();
 
 	// 미사일 크기
-	_missile->SetScale(Vector2(monsterScale._x / 2.f, monsterScale._y / 2.f));
+	missile->SetScale(Vector2(monsterScale._x / 2.f, monsterScale._y / 2.f));
 
 	// 미사일 위치
-	monsterPos._y += (GetScale()._y / 2.f) + (_missile->GetScale()._y / 2.f);
-	_missile->SetPos(monsterPos);
+	monsterPos._y += (GetScale()._y / 2.f) + (missile->GetScale()._y / 2.f);
+	missile->SetPos(monsterPos);
 
 	//// 미사일 방향
 	//_missile->SetTheta(90.f);
 	//_missile->SetTheta(PI / 2.f);
-	_missile->SetDir(Vector2{ 0.f, 1.f });
+	missile->SetDir(Vector2{ 0.f, 1.f });
 
 	CScene* curScene = CSceneManager::GetInstance()->GetCurScene();
-	curScene->AddObject(_missile, GROUP_TYPE::MONSTERMISSILE);
-	
+	curScene->AddObject(missile, GROUP_TYPE::MONSTERMISSILE);
 }
 
 void CMonster::OnCollisionEnter(Collider* other)

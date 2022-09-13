@@ -8,7 +8,8 @@ CObject::CObject()
 	: 
 	_pos{},
 	_scale{},
-	p_collider(nullptr)
+	p_collider(nullptr),
+	_alive(true)
 {
 
 }

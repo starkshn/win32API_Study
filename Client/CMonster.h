@@ -17,7 +17,6 @@ private :
 	bool			_missileFire = true;
 	Vector2			_centerAnchor;
 
-	MonsterMissile*	_missile = nullptr;
 	Texture* _texture;
 	Texture* _missileTexture;
 

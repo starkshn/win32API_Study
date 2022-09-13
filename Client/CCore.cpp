@@ -6,6 +6,7 @@
 #include "CKeyManager.h"
 #include "CSceneManager.h"
 #include "ColliderManager.h"
+#include "EventManager.h"
 
 CCore::CCore()
 	:
@@ -64,26 +65,29 @@ int CCore::init(HWND hWnd, POINT resolution)
 
 void CCore::progress()
 {
+	// ===============
 	// Managers update
+	// ===============
 	CTimeManager::GetInstance()->update(); // DT계산
 	CKeyManager::GetInstance()->update(); // Key상태값 체크
+
+	// ============
 	// Scene Update
+	// ============
 	CSceneManager::GetInstance()->update();
-	// 충돌체크
-	ColliderManager::GetInstance()->update();
+	ColliderManager::GetInstance()->update(); // 충돌체크
 
-	// --------------------
+	// =============
 	// Randering...
-	// --------------------
-	// 화면 clear
-	Rectangle(h_memDC, -1, -1, _resolution.x + 1, _resolution.y + 1);
-
-	// 씬에서 update한 부분 그리기 
-	CSceneManager::GetInstance()->render(h_memDC);
-
+	// =============
+	Rectangle(h_memDC, -1, -1, _resolution.x + 1, _resolution.y + 1); // 화면 clear
+	CSceneManager::GetInstance()->render(h_memDC); // 씬에서 update한 부분 그리기 
 	BitBlt(h_dc, 0, 0, _resolution.x, _resolution.y, h_memDC, 0, 0, SRCCOPY);
 
-	// CTimeManager::GetInstance()->render();
+	// ===============
+	// 이벤트 지연 처리
+	// ===============
+	EventManager::GetInstance()->update();
 }
 
 void CCore::CreateHBRUSH()

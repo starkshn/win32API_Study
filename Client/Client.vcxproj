@@ -158,6 +158,7 @@
     <ClInclude Include="define.h" />
     <ClInclude Include="EventManager.h" />
     <ClInclude Include="framework.h" />
+    <ClInclude Include="Func.h" />
     <ClInclude Include="MonsterMissile.h" />
     <ClInclude Include="PathManager.h" />
     <ClInclude Include="pch.h" />
@@ -191,6 +192,7 @@
     <ClCompile Include="CSceneManager.cpp" />
     <ClCompile Include="CTimeManager.cpp" />
     <ClCompile Include="EventManager.cpp" />
+    <ClCompile Include="Func.cpp" />
     <ClCompile Include="main.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
     </ClCompile>

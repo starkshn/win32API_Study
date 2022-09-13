@@ -24,6 +24,8 @@ using std::shared_ptr;
 // image
 #pragma comment(lib, "Msimg32.lib")
 
+#include "Func.h"
+
 
 
 

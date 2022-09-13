@@ -89,6 +89,12 @@
     <Filter Include="Engine\03. Managers\EventManager">
       <UniqueIdentifier>{01e77e51-aa61-403f-83c7-906457b76fea}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\08. Util\GDI">
+      <UniqueIdentifier>{18569a59-7abd-4324-b401-756aec239a95}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\08. Util\Func">
+      <UniqueIdentifier>{4dd122d0-510a-47ec-9341-176295e65136}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CCore.h">
@@ -170,14 +176,17 @@
     <ClInclude Include="Collider.h">
       <Filter>Engine\07. Component</Filter>
     </ClInclude>
-    <ClInclude Include="SelectGDI.h">
-      <Filter>Engine\08. Util</Filter>
-    </ClInclude>
     <ClInclude Include="ColliderManager.h">
       <Filter>Engine\03. Managers\CollierManager</Filter>
     </ClInclude>
     <ClInclude Include="EventManager.h">
       <Filter>Engine\03. Managers\EventManager</Filter>
+    </ClInclude>
+    <ClInclude Include="SelectGDI.h">
+      <Filter>Engine\08. Util\GDI</Filter>
+    </ClInclude>
+    <ClInclude Include="Func.h">
+      <Filter>Engine\08. Util\Func</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -242,14 +251,17 @@
     <ClCompile Include="Collider.cpp">
       <Filter>Engine\07. Component</Filter>
     </ClCompile>
-    <ClCompile Include="SelectGDI.cpp">
-      <Filter>Engine\08. Util</Filter>
-    </ClCompile>
     <ClCompile Include="ColliderManager.cpp">
       <Filter>Engine\03. Managers\CollierManager</Filter>
     </ClCompile>
     <ClCompile Include="EventManager.cpp">
       <Filter>Engine\03. Managers\EventManager</Filter>
+    </ClCompile>
+    <ClCompile Include="SelectGDI.cpp">
+      <Filter>Engine\08. Util\GDI</Filter>
+    </ClCompile>
+    <ClCompile Include="Func.cpp">
+      <Filter>Engine\08. Util\Func</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

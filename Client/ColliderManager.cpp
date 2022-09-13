@@ -45,7 +45,7 @@ void ColliderManager::CollisionGroupUpdate(GROUP_TYPE left, GROUP_TYPE right)
 
 		for (size_t j = 0; j < vecRight.size(); ++j)
 		{
-			// 충돌체를 보유하지 않는 경유 || 나 자신일 경우
+			// 충돌체를 보유하지 않는 경우 || 나 자신일 경우
 			if (nullptr == vecRight[j]->GetCollider() || vecLeft[i] == vecRight[j])
 				continue;
 			
@@ -71,7 +71,6 @@ void ColliderManager::CollisionGroupUpdate(GROUP_TYPE left, GROUP_TYPE right)
 			if (IsCollision(leftCollider, rightCollider))
 			{
 				// 현재 충돌 중이다.
-				
 				if (iter->second)
 				{
 					// 이전에도 충돌하고 있었다. Stay
