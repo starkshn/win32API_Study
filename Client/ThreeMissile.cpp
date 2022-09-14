@@ -5,6 +5,7 @@
 #include "CMissile.h"
 #include "ResourceManager.h"
 #include "Texture.h"
+#include "Collider.h"
 
 ThreeMissile::ThreeMissile()
 {
@@ -91,4 +92,24 @@ void ThreeMissile::render(HDC dc)
 
 	// Component있는 경우 호출...
 	CObject::ComponentRender(dc);
+}
+
+void ThreeMissile::OnCollisionEnter(Collider* other)
+{
+	CObject* otherObject = other->GetColliderOwner();
+
+	if (otherObject->GetObjectName() == L"gb_monster_1")
+	{
+		DeleteObjectEvent(this);
+	}
+}
+
+void ThreeMissile::OnCollisionStay(Collider* other)
+{
+
+}
+
+void ThreeMissile::OnCollisionExit(Collider* other)
+{
+
 }

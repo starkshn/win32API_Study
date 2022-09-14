@@ -14,6 +14,7 @@ private :
 	float			_acc;
 	int				_dir; // 1, -1
 	int				_id;
+	int				_hp = 5;
 	bool			_missileFire = true;
 	Vector2			_centerAnchor;
 

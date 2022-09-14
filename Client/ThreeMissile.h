@@ -4,6 +4,7 @@
 
 class CPlayer;
 class Texture;
+class Coliider;
 
 class ThreeMissile : public CObject
 {
@@ -21,6 +22,11 @@ public:
 public:
 	virtual void update() override;
 	virtual void render(HDC dc) override;
+
+public:
+	virtual void OnCollisionEnter(Collider* other) final;
+	virtual void OnCollisionStay(Collider* other) final;
+	virtual void OnCollisionExit(Collider* other) final;
 
 };
 

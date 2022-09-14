@@ -26,7 +26,10 @@ void CScene::update()
 	{
 		for (size_t j = 0; j < _objects[i].size(); ++j)
 		{
-			_objects[i][j]->update();
+			if (!_objects[i][j]->IsDead())
+			{
+				_objects[i][j]->update();
+			}
 		}
 	}
 }
@@ -39,19 +42,29 @@ void CScene::finalUpdate()
 		{
 			_objects[i][j]->finalUpdate();
 		}
-	}
+	} 
 }
 
 void CScene::render(HDC dc)
 {	
-	for (unsigned int i = 0; i < static_cast<unsigned int>(GROUP_TYPE::END); ++i)
+	for (UINT i = 0; i < (UINT)GROUP_TYPE::END; ++i)
 	{
-		for (size_t j = 0; j < _objects[i].size(); ++j)
+		vector<CObject*>::iterator iter = _objects[i].begin();
+		// auto iter = _objects[i].begin();
+
+		for (iter = _objects[i].begin(); iter != _objects[i].end();)
 		{
-			_objects[i][j]->render(dc);
+			if (!(*iter)->IsDead())
+			{
+				(*iter)->render(dc);
+				++iter;
+			}
+			else
+			{
+ 				iter = _objects[i].erase(iter);
+			}
 		}
 	}
-
 }
 
 

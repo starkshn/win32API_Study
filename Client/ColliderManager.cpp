@@ -71,23 +71,46 @@ void ColliderManager::CollisionGroupUpdate(GROUP_TYPE left, GROUP_TYPE right)
 			if (IsCollision(leftCollider, rightCollider))
 			{
 				// 현재 충돌 중이다.
+
 				if (iter->second)
 				{
 					// 이전에도 충돌하고 있었다. Stay
-					leftCollider->OnCollisonStay(rightCollider);
-					rightCollider->OnCollisonStay(leftCollider);
+
+					// 둘중 한놈 Delete예정일 수 있다.
+					if (vecLeft[i]->IsDead() || vecRight[j]->IsDead())
+					{
+						// 둘중하나가 삭제 예정이라면은, 충돌을 해제시켜준다.
+						leftCollider->OnCollisionExit(rightCollider);
+						rightCollider->OnCollisionExit(leftCollider);
+						iter->second = false;
+					}
+					else
+					{
+						// 삭제될 예정이 아닐 경우
+						leftCollider->OnCollisonStay(rightCollider);
+						rightCollider->OnCollisonStay(leftCollider);
+					}
 				}
 				else
 				{
 					// 이전에는 충돌하지 않았다. (딱 처음 충돌한 경우) Enter
-					leftCollider->OnCollisionEnter(rightCollider);
-					rightCollider->OnCollisionEnter(leftCollider);
-					iter->second = true;
+
+					if (!(vecLeft[i]->IsDead()) && !(vecRight[j]->IsDead()))
+					{
+						// 둘중하나가 삭제 예정이라면은, 충돌 하지 않은것으로 취급
+						leftCollider->OnCollisionEnter(rightCollider);
+						rightCollider->OnCollisionEnter(leftCollider);
+						iter->second = true;
+					}
+
+					// 일로오면은 그냥 충돌은 없었던 것이다.
+					
 				}
 			}
 			else
 			{
 				// 현재 충돌중 이지 않다.
+
 				if (iter->second)
 				{
 					// 이전에는 충돌하고 있었다. Exit
@@ -98,7 +121,6 @@ void ColliderManager::CollisionGroupUpdate(GROUP_TYPE left, GROUP_TYPE right)
 			}
 		}
 	}
-
 }
 
 bool ColliderManager::IsCollision(Collider* leftCollider, Collider* rightCollider)

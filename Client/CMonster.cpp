@@ -22,6 +22,8 @@ CMonster::CMonster()
 
 	CreateCollider();
 	GetCollider()->SetColliderScale(Vector2{40.f, 40.f});
+
+	SetObjectName(L"gb_monster_1");
 }
 
 CMonster::~CMonster()
@@ -118,7 +120,16 @@ void CMonster::CreateMonsterMissile()
 
 void CMonster::OnCollisionEnter(Collider* other)
 {
-	other->GetOwner();
+	CObject* otherPtr = other->GetColliderOwner();
+
+	// 충돌한 물체가 미사일인지 확인후 몬스터를 삭제이벤트에 등록함.
+	if (otherPtr->GetObjectName() == L"gb_missile_1")
+	{
+		_hp -= 1;
+
+		if (_hp <= 0)
+			DeleteObjectEvent(this);
+	}
 }
 
 void CMonster::OnCollisionStay(Collider* other)

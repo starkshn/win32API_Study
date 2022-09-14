@@ -40,6 +40,13 @@ void CTimeManager::update()
 	_prevCount = _curCount;
 
 	render();
+
+#ifdef _DEBUG
+	if (_deltaTime > (1. / 60.))
+	{
+		_deltaTime = 1. / 60.;
+	}
+#endif
 }
 
 void CTimeManager::render()

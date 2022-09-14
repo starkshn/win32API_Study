@@ -1,2 +1,5 @@
-﻿  Collider.cpp
+﻿  CMonster.cpp
+C:\Users\stark\Desktop\CPP\WinApiStudy\Client\ResourceManager.h(20,1): warning C4150: 불완전한 형식 'Texture'에 대한 포인터를 삭제했습니다. 소멸자가 호출되지 않습니다.
+C:\Users\stark\Desktop\CPP\WinApiStudy\Client\ResourceManager.h(3): message : 'Texture' 선언을 참조하십시오.
+  EventManager.cpp
   Client.vcxproj -> C:\Users\stark\Desktop\CPP\WinApiStudy\Output\bin_Debug\Client.exe
