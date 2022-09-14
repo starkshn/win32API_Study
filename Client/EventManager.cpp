@@ -58,8 +58,12 @@ void EventManager::ExcuteEvent(const Event& event)
 			// Object를 Dead상태로 변경
 			// 삭제 예정 오브젝트들을 모아둔다.
 			CObject* deadObjPtr = (CObject*)event._objectPtr;
-			deadObjPtr->SetDead();
-			_vecDead.push_back(deadObjPtr);
+
+			if (!deadObjPtr->IsDead())
+			{
+				deadObjPtr->SetDead();
+				_vecDead.push_back(deadObjPtr);
+			}
 		}
 			break;
 		case EVENT_TYPE::SCENE_CHANGE:
