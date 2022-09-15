@@ -7,8 +7,13 @@ class CSceneManager
 	SINGLE(CSceneManager);
 
 private :
-	CScene* _scenes[static_cast<unsigned int>(SCENE_TYPE::END)]; // ¸ðµç ¾À µî·Ï
-	CScene* _curScene; // ÇöÀç ¾À
+	CScene* p_scenes[static_cast<unsigned int>(SCENE_TYPE::END)]; // ¸ðµç ¾À µî·Ï
+	CScene* p_curScene; // ÇöÀç ¾À
+
+private:
+	void ChangeRealScene(SCENE_TYPE sceneType);
+
+	friend class EventManager;
 
 public : 
 	void init();
@@ -16,7 +21,7 @@ public :
 	void render(HDC sceneDC);
 	
 public:
-	CScene* GetCurScene() { return _curScene; }
+	CScene* GetCurScene() { return p_curScene; }
 
 };
 

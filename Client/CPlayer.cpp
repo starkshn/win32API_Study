@@ -3,7 +3,6 @@
 #include "CKeyManager.h"
 #include "CTimeManager.h"
 #include "CMissile.h"
-#include "CCharingMissile.h"
 #include "ThreeMissile.h"
 #include "CSceneManager.h"
 #include "CScene.h"
@@ -162,14 +161,5 @@ void CPlayer::CreateThreeMissile()
 	//curScene->AddObject(missile1, GROUP_TYPE::THREEMISSILE);
 	//curScene->AddObject(missile2, GROUP_TYPE::THREEMISSILE);
  	//curScene->AddObject(missile3, GROUP_TYPE::THREEMISSILE);
-}
-
-void CPlayer::ChargingMissile()
-{
-}
-
-void CPlayer::ShootMissile()
-{
-	
 }
 

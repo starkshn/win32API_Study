@@ -16,9 +16,10 @@ public:
 	virtual ~StartScene() override;
 
 private:
-	virtual void Enter() final;
-	virtual void Exit() final;
+	virtual void Enter() override;
+	virtual void Exit() override;
 	virtual void render(HDC dc) override;
+	virtual void update() override;
 
 public:
 	void SetMonsterCount(int count) { _monsterCount = count; }

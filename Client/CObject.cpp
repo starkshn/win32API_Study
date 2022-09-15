@@ -13,6 +13,19 @@ CObject::CObject()
 {
 
 }
+
+CObject::CObject(const CObject& origin)
+	:
+	_objectName(origin._objectName),
+	_pos(origin._pos),
+	_scale(origin._scale),
+	p_collider(nullptr),
+	_alive(true)
+{
+	p_collider = new Collider(*origin.p_collider);
+	p_collider->p_owner = this;
+}
+
 CObject::~CObject()
 {
 	if (nullptr != p_collider)

@@ -67,6 +67,24 @@ void CScene::render(HDC dc)
 	}
 }
 
+void CScene::DeleteGroupObjects(GROUP_TYPE groupType)
+{
+	// SafeDeleteVector(_objects[static_cast<UINT>(groupType)]);
+
+
+	// 밑에처럼 명시적으로 호출하는 것이 원래는 정석이다.
+	SafeDeleteVector<CObject*>(_objects[static_cast<UINT>(groupType)]);
+}
+
+void CScene::DeleteAllGroups()
+{
+	for (size_t i = 0; i < static_cast<UINT>(GROUP_TYPE::END); ++i)
+	{
+		// 모든 오브젝트 싹다 삭제.
+		DeleteGroupObjects(static_cast<GROUP_TYPE>(i));
+	}
+}
+
 
 
 

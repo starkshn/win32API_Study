@@ -22,3 +22,13 @@ void DeleteObjectEvent(CObject* objectPtr)
 
 	EventManager::GetInstance()->AddEvent(evt);
 }
+
+void ChangeScene(SCENE_TYPE changeSceneType)
+{
+	// 이번프레임에서는 이벤트 등록을 하고 다음 프레임에 씬을 변경을 할 것이다.
+	Event evt = {};
+	evt._eventType = EVENT_TYPE::SCENE_CHANGE;
+	evt._objectPtr = (DWORD_PTR)changeSceneType;
+
+ 	EventManager::GetInstance()->AddEvent(evt);
+}

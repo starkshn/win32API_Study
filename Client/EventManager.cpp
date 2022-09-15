@@ -68,7 +68,8 @@ void EventManager::ExcuteEvent(const Event& event)
 			break;
 		case EVENT_TYPE::SCENE_CHANGE:
 		{
-
+			// _objectPtr : nextScene
+			CSceneManager::GetInstance()->ChangeRealScene((SCENE_TYPE)event._objectPtr);
 		}
 			break;
 	}

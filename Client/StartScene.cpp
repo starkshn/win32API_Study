@@ -9,6 +9,8 @@
 #include "Texture.h"
 #include "ResourceManager.h"
 #include "ColliderManager.h"
+#include "CKeyManager.h"
+#include "CSceneManager.h"
 
 StartScene::StartScene()
 {
@@ -19,6 +21,16 @@ StartScene::~StartScene()
 {
 	// 씬 전부 삭제
 	
+}
+
+void StartScene::update()
+{
+	CScene::update();
+
+	if (KEY_TAP(KEY::ENTER))
+	{
+		ChangeScene(SCENE_TYPE::TOOL);
+	}
 }
 
 void StartScene::Enter()
@@ -60,13 +72,6 @@ void StartScene::Enter()
 	  
 }
 
-void StartScene::Exit()
-{
-	// 기존의 그룹의 충돌 그룹 해제(씬이 변경될 것이니까)
-	ColliderManager::GetInstance()->ResetGroup();
-	
-}
-
 void StartScene::render(HDC dc)
 {
 	Vector2 resolution = CCore::GetInstance()->GetResolution();
@@ -82,5 +87,12 @@ void StartScene::render(HDC dc)
 	);
 
 	CScene::render(dc);
+}
 
+void StartScene::Exit()
+{
+	DeleteAllGroups();
+
+	// 기존의 그룹의 충돌 그룹 해제(씬이 변경될 것이니까)
+	ColliderManager::GetInstance()->ResetGroup();
 }

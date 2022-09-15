@@ -14,17 +14,12 @@ public:
 	virtual ~CScene();
 
 public :
-	void update();
+	virtual void update();
 	void finalUpdate();
 	virtual void render(HDC dc);
 
 	virtual void Enter() abstract; // 해당 Scene 에 진입시 호출
 	virtual void Exit() abstract; // 해당 Scene 을 탈출 시 사용
-
-	void AddObject(CObject* obj, GROUP_TYPE type)
-	{
-		_objects[static_cast<unsigned int>(type)].push_back(obj);
-	}
 
 public :
 	void SetName(wstring strName) { _sceneName = strName; }
@@ -34,6 +29,13 @@ public :
 	{
 		return _objects[static_cast<UINT>(type)];
 	}
+
+	void AddObject(CObject* obj, GROUP_TYPE type)
+	{
+		_objects[static_cast<unsigned int>(type)].push_back(obj);
+	}
+	void DeleteGroupObjects(GROUP_TYPE groupType);
+	void DeleteAllGroups();
 
 };
 

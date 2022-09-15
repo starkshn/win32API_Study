@@ -19,6 +19,7 @@ private :
 	
 public:
 	CObject();
+	CObject(const CObject& origin);
 	virtual ~CObject();
 
 	friend class EventManager;
