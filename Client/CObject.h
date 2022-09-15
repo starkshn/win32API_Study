@@ -1,6 +1,7 @@
 #pragma once
 
 class Collider;
+class Animator;
 
 class CObject
 {
@@ -13,7 +14,9 @@ private :
 	Vector2		_pos;
 	Vector2		_scale;
 
+	// Component
 	Collider*	p_collider;
+	Animator*	p_animator;
 
 	bool		_alive;
 	

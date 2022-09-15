@@ -19,3 +19,18 @@ void SafeDeleteVector(vector<T>& vector)
 	}
 	vector.clear();
 }
+
+template <typename T1, typename T2>
+void SafeDeleteMap(map<T1, T2>& map)
+{
+	auto iter = map.begin();
+	// typename map<T1, T2>::iterator iter = map.begin(); // 중위순회
+	
+	for (; iter != map.end;)
+	{
+		if (nullptr != iter->second)
+			delete iter->second;
+
+		map.clear();
+	}
+}

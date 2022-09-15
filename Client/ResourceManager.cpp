@@ -20,8 +20,11 @@ ResourceManager::~ResourceManager()
 	// 2. Functor 사용
 	// for_each(_mapTexture.begin(), _mapTexture.end(), DeleteTexture());
 
-	// 람다 사용
-	for_each(_mapTexture.begin(), _mapTexture.end(), [&](std::pair<wstring, Texture*> pair) { if (pair.second != nullptr) delete pair.second; });
+	// 3. 람다 사용
+	// for_each(_mapTexture.begin(), _mapTexture.end(), [&](std::pair<wstring, Texture*> pair) { if (pair.second != nullptr) delete pair.second; });
+
+	// 4. Func.cpp 에 구현한 SafeDeleteMap사용
+	SafeDeleteMap(_mapTexture);
 }
 
 Texture* ResourceManager::LoadTexture(const wstring& key, const wstring& path)
