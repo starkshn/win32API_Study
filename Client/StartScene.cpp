@@ -42,24 +42,28 @@ void StartScene::Enter()
 
 	AddObject(obj, GROUP_TYPE::PLAYER);
 
-	// 몬스터 오브젝트
-	CMonster* monster = nullptr;
+	// 복사생성자 테스트
+	CObject* otherPlayer = obj->Clone();
+	otherPlayer->SetPos(Vector2(740.f, 384.f));
+	AddObject(otherPlayer, GROUP_TYPE::PLAYER);
 
 	// 몬스터 배치
-	SetMonsterCount(4);
+	SetMonsterCount(8);
 	float moveDistance = 25.f;
 	float monsterScale = 50.f;
 
 	Vector2 resolution = CCore::GetInstance()->GetResolution();
 	float term = ( resolution._x - (moveDistance + monsterScale / 2.f) * 2) / static_cast<float>(GetMonsterCount() - 1);
 
+	CMonster* monster = nullptr;
+
 	for (int i = 0; i < GetMonsterCount(); ++i)
 	{
 		monster = new CMonster();
-		monster->SetPos(Vector2( (moveDistance + monsterScale / 2.f )+ static_cast<float>(i) * term, 50.f));
+		monster->SetPos(Vector2( (moveDistance + monsterScale / 2.f ) + static_cast<float>(i) * term, 50.f));
+		monster->SetScale(Vector2(50.f, 50.f));
 		monster->SetMoveDistance(moveDistance);
 		monster->SetCenterAnchor(monster->GetPos());
-		monster->SetScale(Vector2(50.f, 50.f));
 		monster->SetMonsterId(_monsterId++);
 		AddObject(monster, GROUP_TYPE::MONSTER);
 	}

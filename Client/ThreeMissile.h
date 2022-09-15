@@ -9,12 +9,14 @@ class Coliider;
 class ThreeMissile : public CObject
 {
 private:
+	CLONE(ThreeMissile);
 	int			_id = 0;
 	Texture*	p_missileTexture;
 
 public:
 	ThreeMissile();
-	~ThreeMissile();
+	virtual ~ThreeMissile() override;
+
 public:
 	void SetId(int id) { _id = id; }
 	int GetId() { return _id; }
@@ -27,6 +29,5 @@ public:
 	virtual void OnCollisionEnter(Collider* other) final;
 	virtual void OnCollisionStay(Collider* other) final;
 	virtual void OnCollisionExit(Collider* other) final;
-
 };
 

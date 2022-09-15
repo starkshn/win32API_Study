@@ -9,6 +9,7 @@ class Collider;
 class CMonster : public CObject
 {
 private :
+	CLONE(CMonster);
 	float			_speed;
 	float			_loopDistance;
 	float			_acc;
@@ -23,7 +24,7 @@ private :
 
 public :
 	CMonster();
-	~CMonster();
+	virtual ~CMonster() override;
 
 public :
 	virtual void update() override;

@@ -22,22 +22,25 @@ public:
 	CObject(const CObject& origin);
 	virtual ~CObject();
 
-	friend class EventManager;
-
 public:
 	virtual void update() abstract;
 	virtual void finalUpdate() final;
 	virtual void render(HDC dc);
 
-	void SetDead() { _alive = false; } // 이벤트 처리를 위해서만 사용할 함수
+	virtual void OnCollisionEnter(Collider* other) {}
+	virtual void OnCollisionStay(Collider* other) {}
+	virtual void OnCollisionExit(Collider* other) {}
+
+	virtual CObject* Clone() abstract;
 
 public:
 	void ComponentRender(HDC dc);
 	void CreateCollider();
 	
-	virtual void OnCollisionEnter(Collider* other) {}
-	virtual void OnCollisionStay(Collider* other) {}
-	virtual void OnCollisionExit(Collider* other) {}
+	// 이벤트 처리를 위해서만 사용할 함수
+	void SetDead() { _alive = false; }
+
+	bool IsDead() { return !_alive; }
 
 public :
 	void SetPos(Vector2 pos) { _pos = pos; }
@@ -45,7 +48,6 @@ public :
 	void SetTheta(float theta) { _theta = theta; }
 	void SetDir(Vector2 dir) { _dir = dir; _dir.Normalize(); }
 	void SetObjectName(const wstring& name) { _objectName = name; }
-
 
 	Vector2 GetPos() { return _pos; }
 	Vector2 GetScale() { return _scale; }
@@ -55,7 +57,6 @@ public :
 
 	const wstring& GetObjectName() { return _objectName; }
 
-	bool IsDead() { return !_alive; }
-
+	friend class EventManager;
 };
 

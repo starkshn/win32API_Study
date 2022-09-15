@@ -7,6 +7,9 @@
 #define DeltaTime_F CTimeManager::GetInstance()->GetfDeltaTime()
 #define DeltaTime CTimeManager::GetInstance()->GetDeltaTime()
 
+// 암시적 복사생성자 호출할 경우 부모 복사생성자 호출한다.
+#define CLONE(type) type* Clone() { return new type(*this); }
+
 #define KEY_CHECK(key, state) CKeyManager::GetInstance()->GetKeyState(key) == state
 
 #define KEY_HOLD(key) KEY_CHECK(key, KEY_STATE::HOLD)

@@ -8,11 +8,12 @@ class Texture;
 class CPlayer : public CObject
 {
 private:
+	CLONE(CPlayer);
 	Texture*	p_myObject;
 
 public :
 	CPlayer();
-	~CPlayer();
+	virtual ~CPlayer() override;
 
 public:
 	virtual void update() final;
@@ -21,7 +22,5 @@ public:
 public :
 	void CreateMissile();
 	void CreateThreeMissile();
-
-public :
 
 };
