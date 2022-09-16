@@ -10,16 +10,21 @@
 #include "PathManager.h"
 #include "ResourceManager.h"
 #include "Collider.h"
+#include "Animator.h"
 
 CPlayer::CPlayer() : p_myObject(nullptr)
 {
-	p_myObject = ResourceManager::GetInstance()->LoadTexture(L"PlayerTexture", L"Textures\\gb_player_1.bmp");
-
 	CreateCollider();
 	GetCollider()->SetOffsetPos(Vector2{0.f, 5.f});
 	GetCollider()->SetColliderScale(Vector2{ 30.f, 30.f });
 
 	SetObjectName(L"gb_player_1");
+
+	// Animator 추가
+	// 애니매이션 세로 74px, 가로 : 80
+	p_myObject = ResourceManager::GetInstance()->LoadTexture(L"PlayerAnimationTexture", L"Textures\\Animations2.bmp");
+	CreateAnimator();
+	GetAnimator()->CreateAnimation(L"SEX", p_myObject, Vector2(0, 296), Vector2(74, 80), Vector2(74, 0), 10);
 }
 CPlayer::~CPlayer()
 {

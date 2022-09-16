@@ -37,12 +37,18 @@ public:
 	virtual CObject* Clone() abstract;
 
 public:
-	void ComponentRender(HDC dc);
 	void CreateCollider();
+	void CreateAnimator();
+
+public:
+	Collider* GetCollider() { return p_collider; }
+	Animator* GetAnimator() { return p_animator; }
+
+public:
+	void ComponentRender(HDC dc);
 	
 	// 이벤트 처리를 위해서만 사용할 함수
 	void SetDead() { _alive = false; }
-
 	bool IsDead() { return !_alive; }
 
 public :
@@ -52,12 +58,11 @@ public :
 	void SetDir(Vector2 dir) { _dir = dir; _dir.Normalize(); }
 	void SetObjectName(const wstring& name) { _objectName = name; }
 
+public:
 	Vector2 GetPos() { return _pos; }
 	Vector2 GetScale() { return _scale; }
 	Vector2 GetVector2Dir() { return _dir; }
 	float GetTheta() { return _theta; }
-	Collider* GetCollider() { return p_collider; }
-
 	const wstring& GetObjectName() { return _objectName; }
 
 	friend class EventManager;

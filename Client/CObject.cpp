@@ -3,6 +3,7 @@
 #include "CKeyManager.h"
 #include "CTimeManager.h"
 #include "Collider.h"
+#include "Animator.h"
 
 CObject::CObject() 
 	: 
@@ -32,6 +33,11 @@ CObject::CObject(const CObject& origin)
 	}
 	
 	// TODO : Animator ±íÀºº¹»ç
+	if (origin.p_animator)
+	{
+		p_animator = new Animator(*origin.p_animator);
+		p_animator->p_owner = this;
+	}
 }
 
 CObject::~CObject()
@@ -69,10 +75,19 @@ void CObject::ComponentRender(HDC dc)
 {
 	if (nullptr != p_collider)
 		p_collider->render(dc);
+
+	if (nullptr != p_animator)
+		p_animator->render(dc);
 }
 
 void CObject::CreateCollider()
 {
 	p_collider = new Collider;
 	p_collider->p_owner = this;
+}
+
+void CObject::CreateAnimator()
+{
+	p_animator = new Animator();
+	p_animator->p_owner = this;
 }
