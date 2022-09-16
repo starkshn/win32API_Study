@@ -1,8 +1,10 @@
 #include "pch.h"
 #include "ResourceManager.h"
+#include "Resources.h"
 #include "PathManager.h"
 #include "Texture.h"
 #include <algorithm>
+
 ResourceManager::ResourceManager()
 {
 	
@@ -48,10 +50,10 @@ Texture* ResourceManager::LoadTexture(const wstring& key, const wstring& path)
 
 Texture* ResourceManager::FindTexture(const wstring& key)
 {
-	map<wstring, Texture*>::iterator iter = _mapTexture.find(key);
+	map<wstring, Resources*>::iterator iter = _mapTexture.find(key);
 	// auto iter = _mapTexture.find(key);
 	if (iter == _mapTexture.end())
 		return nullptr;
 
-	return iter->second;
+	return (Texture*)iter->second;
 }

@@ -22,7 +22,13 @@ public:
 	void render(HDC dc);
 
 public:
-	void CreateAnimation(const wstring& animationName, Texture* texture, Vector2 startPos, Vector2 sliceSize, Vector2 step, int frameCount);
+	void CreateAnimation
+	(
+		const wstring& animationName,
+		Texture* texture, Vector2 startPos, 
+		Vector2 sliceSize, Vector2 step,
+		float duration, UINT frameCount
+	);
 	Animation* FindAnimation(const wstring& animName);
 	void AnimationPlay();
 

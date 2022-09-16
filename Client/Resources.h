@@ -8,7 +8,7 @@ private :
 
 public :
 	Resources();
-	~Resources();
+	virtual ~Resources();
 
 public :
 	void SetKey(const wstring& strkey) { _strKey = strkey; }

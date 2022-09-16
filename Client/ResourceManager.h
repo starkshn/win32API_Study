@@ -1,12 +1,14 @@
 #pragma once
 
 class Texture;
+class Resources;
 
 class ResourceManager
 {
 	SINGLE(ResourceManager);
+
 private:
-	map<wstring, Texture*> _mapTexture;
+	map<wstring, Resources*> _mapTexture;
 
 public:
 	Texture* LoadTexture(const wstring& key, const wstring& path);
@@ -19,8 +21,6 @@ public:
 			if (pair.second != nullptr)
 				delete  pair.second;
 		}
-
-	private:
 	};
 }; 
 

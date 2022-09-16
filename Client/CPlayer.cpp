@@ -21,10 +21,10 @@ CPlayer::CPlayer() : p_myObject(nullptr)
 	SetObjectName(L"gb_player_1");
 
 	// Animator 추가
-	// 애니매이션 세로 74px, 가로 : 80
+	// 애니매이션 세로 80px, 가로 : 74
 	p_myObject = ResourceManager::GetInstance()->LoadTexture(L"PlayerAnimationTexture", L"Textures\\Animations2.bmp");
 	CreateAnimator();
-	GetAnimator()->CreateAnimation(L"SEX", p_myObject, Vector2(0, 296), Vector2(74, 80), Vector2(74, 0), 10);
+	GetAnimator()->CreateAnimation(L"WALK_DOWN", p_myObject, Vector2(0, 296), Vector2(74, 80), Vector2(74, 0), 1.f, 10);
 }
 CPlayer::~CPlayer()
 {

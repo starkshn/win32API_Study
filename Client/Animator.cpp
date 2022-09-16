@@ -38,7 +38,12 @@ void Animator::render(HDC dc)
 		p_curAnimation->render(dc);
 }
 
-void Animator::CreateAnimation(const wstring& animName, Texture* texture, Vector2 startPos, Vector2 sliceSize, Vector2 step, int frameCount)
+void Animator::CreateAnimation
+(
+	const wstring& animName, 
+	Texture* texture, Vector2 startPos,
+	Vector2 sliceSize, Vector2 step,
+	float duration, UINT frameCount )
 {
 	Animation* anim = FindAnimation(animName);
 	assert(nullptr == anim);
@@ -47,10 +52,9 @@ void Animator::CreateAnimation(const wstring& animName, Texture* texture, Vector
 
 	anim->SetAnimName(animName);
 	anim->SetAnimator(this);
-	anim->Create(texture, startPos, sliceSize, step, frameCount);
+	anim->Create(texture, startPos, sliceSize, step, duration ,frameCount);
 
 	_mapAnimations.insert(make_pair(animName, anim));
-
 }
 
 Animation* Animator::FindAnimation(const wstring& animName)

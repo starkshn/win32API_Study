@@ -10,9 +10,8 @@ private :
 
 private :
 	Texture();
-	~Texture();
+	virtual ~Texture() override;
 	
-	friend class ResourceManager; 
 public :
 	void Load(const wstring& path);
 
@@ -24,6 +23,7 @@ public :
 	LONG GetHeight() { return _objectInfo.bmHeight; }
 	BITMAP GetInfo() { return _objectInfo; }
 
-	
+
+	friend class ResourceManager;
 };
 
