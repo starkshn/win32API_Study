@@ -5,7 +5,8 @@
 Animator::Animator()
 	:
 	p_owner(nullptr),
-	p_curAnimation(nullptr)
+	p_curAnimation(nullptr),
+	_animRepeat(false)
 {
 
 }
@@ -24,7 +25,14 @@ Animator::~Animator()
 void Animator::update()
 {
 	if (nullptr != p_curAnimation)
+	{
 		p_curAnimation->update();
+
+		if (_animRepeat && p_curAnimation->IsFinish())
+		{
+			p_curAnimation->SetAnimFrame(0);
+		}
+	}
 }
 
 void Animator::finalUpdate()
@@ -38,8 +46,7 @@ void Animator::render(HDC dc)
 		p_curAnimation->render(dc);
 }
 
-void Animator::CreateAnimation
-(
+void Animator::CreateAnimation ( 
 	const wstring& animName, 
 	Texture* texture, Vector2 startPos,
 	Vector2 sliceSize, Vector2 step,
@@ -57,7 +64,7 @@ void Animator::CreateAnimation
 	_mapAnimations.insert(make_pair(animName, anim));
 }
 
-Animation* Animator::FindAnimation(const wstring& animName)
+Animation* Animator::FindAnimation( const wstring& animName)
 {
 	// auto iter = _mapAnimations.find(animName);
 	map<wstring, Animation*>::iterator iter = _mapAnimations.find(animName);
@@ -68,7 +75,9 @@ Animation* Animator::FindAnimation(const wstring& animName)
 	return iter->second;
 }
 
-void Animator::AnimationPlay()
+void Animator::PlayAnimation(const wstring& animName, bool animRepeat)
 {
-
+	p_curAnimation = FindAnimation(animName);
+	_animRepeat = animRepeat;
 }
+

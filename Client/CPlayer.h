@@ -9,7 +9,7 @@ class CPlayer : public CObject
 {
 private:
 	CLONE(CPlayer);
-	Texture*	p_myObject;
+	// Texture*	p_myObject;
 
 public :
 	CPlayer();

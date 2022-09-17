@@ -43,9 +43,9 @@ void StartScene::Enter()
 	AddObject(obj, GROUP_TYPE::PLAYER);
 
 	// 복사생성자 테스트
-	CObject* otherPlayer = obj->Clone();
-	otherPlayer->SetPos(Vector2(740.f, 384.f));
-	AddObject(otherPlayer, GROUP_TYPE::PLAYER);
+	//CObject* otherPlayer = obj->Clone();
+	//otherPlayer->SetPos(Vector2(740.f, 384.f));
+	//AddObject(otherPlayer, GROUP_TYPE::PLAYER);
 
 	// 몬스터 배치
 	SetMonsterCount(8);

@@ -12,19 +12,21 @@
 #include "Collider.h"
 #include "Animator.h"
 
-CPlayer::CPlayer() : p_myObject(nullptr)
+CPlayer::CPlayer()
 {
 	CreateCollider();
 	GetCollider()->SetOffsetPos(Vector2{0.f, 5.f});
 	GetCollider()->SetColliderScale(Vector2{ 30.f, 30.f });
 
-	SetObjectName(L"gb_player_1");
+	SetObjectName(L"player");
 
 	// Animator 추가
-	// 애니매이션 세로 80px, 가로 : 74
-	p_myObject = ResourceManager::GetInstance()->LoadTexture(L"PlayerAnimationTexture", L"Textures\\Animations2.bmp");
+	// 애니매이션 가로 74pixel, 세로 80pixel
+	Texture* texture = ResourceManager::GetInstance()->LoadTexture(L"PlayerAnimationTexture", L"Textures\\Animations2.bmp");
+
 	CreateAnimator();
-	GetAnimator()->CreateAnimation(L"WALK_DOWN", p_myObject, Vector2(0, 296), Vector2(74, 80), Vector2(74, 0), 1.f, 10);
+	GetAnimator()->CreateAnimation(L"WALK_DOWN", texture, Vector2(0, 320), Vector2(74, 80), Vector2(74, 0), 0.08f, 10);
+	GetAnimator()->PlayAnimation(L"WALK_DOWN", true);
 }
 CPlayer::~CPlayer()
 {
@@ -63,14 +65,16 @@ void CPlayer::update()
 	}
 
 	SetPos(pos);
+
+	GetAnimator()->update();
 }
 
 void CPlayer::render(HDC dc)
 {
-	int width = static_cast<int>(p_myObject->GetWidth());
-	int height = static_cast<int>(p_myObject->GetHeight());
-
-	Vector2 pos = GetPos();
+	//int width = static_cast<int>(p_myObject->GetWidth());
+	//int height = static_cast<int>(p_myObject->GetHeight());
+	//
+	//Vector2 pos = GetPos();
 
 	//BitBlt
 	//(
@@ -83,17 +87,17 @@ void CPlayer::render(HDC dc)
 	//	0, 0, SRCCOPY
 	//);
 
-	TransparentBlt
-	(
-		dc,
-		static_cast<int>(pos._x - static_cast<float>((width / 2))),
-		static_cast<int>(pos._y - static_cast<float>((height / 2))),
-		width,
-		height,
-		p_myObject->GetDC(),
-		0, 0, width, height,
-		RGB(255, 0, 255)
-	);
+	//TransparentBlt
+	//(
+	//	dc,
+	//	static_cast<int>(pos._x - static_cast<float>//((width / 2))),
+	//	static_cast<int>(pos._y - static_cast<float>//((height / 2))),
+	//	width,
+	//	height,
+	//	p_myObject->GetDC(),
+	//	0, 0, width, height,
+	//	RGB(255, 0, 255)
+	//);
 
 	// Component있는 경우 호출...
 	CObject::ComponentRender(dc);

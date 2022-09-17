@@ -7,9 +7,10 @@ class Texture;
 class Animator
 {
 private:
-	CObject* p_owner; // 애니매이션 소유 오브젝트
-	map<wstring, Animation*> _mapAnimations; // 모든 애니매이션
-	Animation* p_curAnimation; // 현재 애니매이션
+	CObject*					p_owner; // 애니매이션 소유 오브젝트
+	map<wstring, Animation*>	_mapAnimations; // 모든 애니매이션
+	Animation*					p_curAnimation; // 현재 애니매이션
+	bool						_animRepeat; // 애니매이션 반복재생
 
 public:
 	Animator();
@@ -30,7 +31,10 @@ public:
 		float duration, UINT frameCount
 	);
 	Animation* FindAnimation(const wstring& animName);
-	void AnimationPlay();
+	void PlayAnimation(const wstring& animationName, bool animRepeat);
+
+public:
+	CObject* GetOwnerObject() { return p_owner; }
 
 	friend class CObject;
 };
