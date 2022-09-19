@@ -17,7 +17,7 @@ private:
 	wstring				_animationName;
 	Texture*			p_texture = nullptr; //애니매이션이 사용하는 texture
 	vector<AnimFrame>	_vecAnimFrame = {}; // 애니매이션의 모든 프레임 정보
-	int					_curFrame;
+	int					_curFrame; // 현재 프레임
 	float				_accTime; // 시간 누적 변수
 
 	bool				_animFinish; // 애니매이션 끝 알림.

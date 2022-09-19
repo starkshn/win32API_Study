@@ -9,7 +9,7 @@ Animation::Animation()
 	: 
 	p_animator(nullptr),
 	_animationName(),
-	_curFrame(2),
+	_curFrame(0),
 	p_texture(nullptr),
 	_accTime(0.f),
 	_animFinish(false)
@@ -35,11 +35,13 @@ void Animation::update()
 
 		if (_vecAnimFrame.size() <= _curFrame)
 		{
-			_curFrame = -1;
+			// _curFrame = -1;
+			_curFrame = 0;
 			_animFinish = true;
 		}
 
 		_accTime = _accTime - _vecAnimFrame[_curFrame]._duration;
+		//_accTime = 0.f;
 	}
 }
 

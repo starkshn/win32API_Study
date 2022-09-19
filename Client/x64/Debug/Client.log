@@ -1,2 +1,3 @@
-﻿  Animator.cpp
+﻿  Animation.cpp
+C:\Users\stark\Desktop\CPP\WinApiStudy\Client\Animation.cpp(56,9): warning C4552: '-': 식의 결과가 사용되지 않습니다.
   Client.vcxproj -> C:\Users\stark\Desktop\CPP\WinApiStudy\Output\bin_Debug\Client.exe
