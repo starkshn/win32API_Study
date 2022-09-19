@@ -60,12 +60,15 @@ void CObject::finalUpdate()
 
 void CObject::render(HDC dc)
 {
+	Vector2 renderPos = CameraManager::GetInstance()->GetRenderPos(_pos);
+
 	Rectangle
-	(dc,
-		static_cast<int>(_pos._x - _scale._x / 2.f),
-		static_cast<int>(_pos._y - _scale._y / 2.f),
-		static_cast<int>(_pos._x + _scale._x / 2.f),
-		static_cast<int>(_pos._y + _scale._y / 2.f)
+	(
+		dc,
+		static_cast<int>(renderPos._x - _scale._x / 2.f),
+		static_cast<int>(renderPos._y - _scale._y / 2.f),
+		static_cast<int>(renderPos._x + _scale._x / 2.f),
+		static_cast<int>(renderPos._y + _scale._y / 2.f)
 	);
 
 	ComponentRender(dc);

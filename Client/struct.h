@@ -81,6 +81,12 @@ public :
 		assert(!(0.f == other._x || 0.f == other._y));
 		return Vector2(_x / other._x, _y / other._y);
 	}
+	Vector2 operator / (const float& value)
+	{
+		assert(! (0.f == value) );
+		return Vector2(_x / value, _y / value);
+	}
+
 	Vector2 operator * (int value)
 	{
 		return Vector2(_x * float(value), _y * float(value));

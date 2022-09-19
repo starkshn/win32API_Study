@@ -1,3 +1,41 @@
-﻿  CPlayer.cpp
+﻿  Animation.cpp
 C:\Users\stark\Desktop\CPP\WinApiStudy\Client\Animation.h(55,20): warning C4267: 'return': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Animator.cpp
+C:\Users\stark\Desktop\CPP\WinApiStudy\Client\Animation.h(55,20): warning C4267: 'return': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  CameraManager.cpp
+  CCore.cpp
+  CKeyManager.cpp
+  CCharingMissile.cpp
+  CMonster.cpp
+C:\Users\stark\Desktop\CPP\WinApiStudy\Client\ResourceManager.h(22,1): warning C4150: 불완전한 형식 'Texture'에 대한 포인터를 삭제했습니다. 소멸자가 호출되지 않습니다.
+C:\Users\stark\Desktop\CPP\WinApiStudy\Client\ResourceManager.h(3): message : 'Texture' 선언을 참조하십시오.
+  CMissile.cpp
+C:\Users\stark\Desktop\CPP\WinApiStudy\Client\ResourceManager.h(22,1): warning C4150: 불완전한 형식 'Texture'에 대한 포인터를 삭제했습니다. 소멸자가 호출되지 않습니다.
+C:\Users\stark\Desktop\CPP\WinApiStudy\Client\ResourceManager.h(3): message : 'Texture' 선언을 참조하십시오.
+  CObject.cpp
+  Collider.cpp
+  ColliderManager.cpp
+  CScene.cpp
+  CSceneManager.cpp
+  CTimeManager.cpp
+  EventManager.cpp
+  Func.cpp
+  main.cpp
+  CPlayer.cpp
+C:\Users\stark\Desktop\CPP\WinApiStudy\Client\Animation.h(55,20): warning C4267: 'return': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  MonsterMissile.cpp
+  PathManager.cpp
+  ResourceManager.cpp
+C:\Users\stark\Desktop\CPP\WinApiStudy\Client\ResourceManager.h(22,1): warning C4150: 불완전한 형식 'Texture'에 대한 포인터를 삭제했습니다. 소멸자가 호출되지 않습니다.
+C:\Users\stark\Desktop\CPP\WinApiStudy\Client\ResourceManager.h(3): message : 'Texture' 선언을 참조하십시오.
+  Resources.cpp
+  Sound.cpp
+  StartScene.cpp
+C:\Users\stark\Desktop\CPP\WinApiStudy\Client\StartScene.cpp(91,13): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\stark\Desktop\CPP\WinApiStudy\Client\StartScene.cpp(90,13): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Texture.cpp
+  ThreeMissile.cpp
+C:\Users\stark\Desktop\CPP\WinApiStudy\Client\ResourceManager.h(22,1): warning C4150: 불완전한 형식 'Texture'에 대한 포인터를 삭제했습니다. 소멸자가 호출되지 않습니다.
+C:\Users\stark\Desktop\CPP\WinApiStudy\Client\ResourceManager.h(3): message : 'Texture' 선언을 참조하십시오.
+  ToolScene.cpp
   Client.vcxproj -> C:\Users\stark\Desktop\CPP\WinApiStudy\Output\bin_Debug\Client.exe

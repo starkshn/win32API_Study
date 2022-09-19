@@ -3,6 +3,8 @@
 class Collider;
 class Animator;
 
+#include "CameraManager.h"
+
 class CObject
 {
 private :
