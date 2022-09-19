@@ -11,6 +11,7 @@
 #include "ResourceManager.h"
 #include "Collider.h"
 #include "Animator.h"
+#include "Animation.h"
 
 CPlayer::CPlayer()
 {
@@ -27,6 +28,13 @@ CPlayer::CPlayer()
 	CreateAnimator();
 	GetAnimator()->CreateAnimation(L"WALK_DOWN", texture, Vector2(0, 320), Vector2(74, 80), Vector2(74, 0), 0.08f, 10);
 	GetAnimator()->PlayAnimation(L"WALK_DOWN", true);
+
+	Animation* anim = GetAnimator()->FindAnimation(L"WALK_DOWN");
+
+	for (int i = 0; i < anim->GetMaxFrame(); ++i)
+	{
+		anim->GetAnimFrame(i)._offset = Vector2(0.f, -50.f);
+	}
 }
 CPlayer::~CPlayer()
 {

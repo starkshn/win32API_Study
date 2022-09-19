@@ -7,6 +7,7 @@ struct AnimFrame
 {
 	Vector2		_leftTop;
 	Vector2		_sliceSize;
+	Vector2		_offset; // offsetÀ§Ä¡
 	float		_duration;
 };
 
@@ -50,6 +51,8 @@ public:
 public:
 	const wstring& GetAnimName() { return _animationName; }
 	Animator* GetAnimator() { return p_animator; }
+	AnimFrame& GetAnimFrame(int idx) { return _vecAnimFrame[idx]; }
+	int GetMaxFrame() { return _vecAnimFrame.size(); }
 
 	friend class Animator;
 };

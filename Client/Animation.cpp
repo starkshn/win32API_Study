@@ -35,13 +35,13 @@ void Animation::update()
 
 		if (_vecAnimFrame.size() <= _curFrame)
 		{
-			// _curFrame = -1;
-			_curFrame = 0;
+			_curFrame = -1;
 			_animFinish = true;
+			_accTime = 0.f;
+			return;
 		}
 
 		_accTime = _accTime - _vecAnimFrame[_curFrame]._duration;
-		//_accTime = 0.f;
 	}
 }
 
@@ -53,7 +53,7 @@ void Animation::render(HDC dc)
 	CObject* go = p_animator->GetOwnerObject();
 	Vector2 pos = go->GetPos();
 
-	pos._x - _vecAnimFrame[_curFrame]._sliceSize._x / 2.f;
+	pos += _vecAnimFrame[_curFrame]._offset; // Object Position에 Offset만큼 추가 이동위치
 
 	TransparentBlt
 	(

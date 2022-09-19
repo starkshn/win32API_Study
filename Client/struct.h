@@ -57,6 +57,17 @@ public :
 	{
 		return Vector2(_x + other._x, _y + other._y);
 	}
+	/*Vector2 operator += (const Vector2& other)
+	{
+		Vector2 temp = *this;
+		temp = temp + other;
+		return temp;
+	}*/
+	void operator += (const Vector2 other)
+	{
+		_x += other._x;
+		_y += other._y;
+	}
 	Vector2 operator - (const Vector2& other)
 	{
 		return Vector2(_x - other._x, _y - other._y);
@@ -74,6 +85,7 @@ public :
 	{
 		return Vector2(_x * float(value), _y * float(value));
 	}
+	
 
 
 };
