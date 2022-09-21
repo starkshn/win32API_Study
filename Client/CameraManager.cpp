@@ -48,11 +48,15 @@ void CameraManager::update()
 void CameraManager::CalDiff()
 {
 	// prevLookAt과 현재 LootAt 의 차이값을 보정해서 현재의 LooAt의 구한다.
+	// 둘 사이의 차이값을 뺀 것이 _corLookPos가 쫒아가야할 방향이다.
+	Vector2 lookDir = _lookAtPos - _prevLookPos;
+
+	_corLookPos = _prevLookPos + lookDir.Normalize() * 500.f * DeltaTime_F;
 
 	Vector2 resolution = CCore::GetInstance()->GetResolution();
 	Vector2 centerPos = resolution / 2.f;
 
-	_diff = _lookAtPos - centerPos;
-
+	_diff = _corLookPos - centerPos;
+	_prevLookPos = _corLookPos;
 }
 

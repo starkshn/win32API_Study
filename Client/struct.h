@@ -68,14 +68,17 @@ public :
 		_x += other._x;
 		_y += other._y;
 	}
+
 	Vector2 operator - (const Vector2& other)
 	{
 		return Vector2(_x - other._x, _y - other._y);
 	}
+
 	Vector2 operator * (const Vector2& other)
 	{
 		return Vector2(_x * other._x, _y * other._y);
 	}
+
 	Vector2 operator / (const Vector2& other)
 	{
 		assert(!(0.f == other._x || 0.f == other._y));
@@ -90,6 +93,10 @@ public :
 	Vector2 operator * (int value)
 	{
 		return Vector2(_x * float(value), _y * float(value));
+	}
+	Vector2 operator * (float value)
+	{
+		return Vector2(_x * value, _y * value);
 	}
 	
 };

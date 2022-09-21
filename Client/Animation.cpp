@@ -84,7 +84,7 @@ void Animation::Create
 
 	AnimFrame frm = {};
 	// frameCount : 만들어내야할 프레임 갯수
-	for (UINT i = 0; i < frameCount; ++i)
+	for (int i = 0; i < frameCount; ++i)
 	{
 		frm._duration = duration;
 		frm._sliceSize = sliceSize;

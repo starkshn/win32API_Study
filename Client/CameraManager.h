@@ -8,6 +8,7 @@ class CameraManager
 
 private:
 	Vector2		_lookAtPos; // 실제 카메라고 보는 위치
+	Vector2		_corLookPos; // 이전위치와 현재위치의 보정위치
 	Vector2		_prevLookPos; // 카메라가 보는 이전 프레임 위치
 	Vector2		_diff; // 해상도 중심위치와, 카메라 LookAt간의 차이값.
 
@@ -24,7 +25,7 @@ public:
 	void SetTarget(CObject* target) { _targetObject = target; };
 
 public:
-	Vector2		GetLookPos() { return _lookAtPos; };
+	Vector2		GetLookPos() { return _corLookPos; }; // 현재 보고있는 위치
 	CObject*	GetTarget() { return _targetObject; };
 	Vector2		GetRenderPos(Vector2 objPos) { return (objPos - _diff); }
 	Vector2		GetRealPos(Vector2 renderPos) { return (renderPos + _diff); };
