@@ -35,6 +35,9 @@ int g_arrVK[static_cast<int>(KEY::LAST)] =
 	VK_CONTROL,
 	VK_RETURN,
 	VK_ESCAPE,
+
+	VK_LBUTTON,
+	VK_RBUTTON,
 	
 	//LAST,
 };
@@ -97,6 +100,15 @@ void CKeyManager::update()
 				_vecKey[i]._isPrevInput = false;
 			}
 		}
+
+		// 포커싱 중일때 현재 마우스 좌표 계산
+		POINT pos = {};
+		GetCursorPos(&pos);
+
+		// 윈도우 좌표 -> 클라 좌표 ( 인자로 현재 윈도우 핸들값 넣는다.)
+		ScreenToClient(CCore::GetInstance()->GetMainHwnd(), &pos);
+
+		_curMousePos = Vector2(static_cast<float>(pos.x), static_cast<float>(pos.y));
 	}
 	else // 윈도우 포커싱 해제
 	{

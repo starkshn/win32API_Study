@@ -35,6 +35,7 @@ CPlayer::CPlayer()
 	{
 		anim->GetAnimFrame(i)._offset = Vector2(0.f, -50.f);
 	}
+
 }
 CPlayer::~CPlayer()
 {

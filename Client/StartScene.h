@@ -3,6 +3,7 @@
 #include "CMonster.h"
 
 class Texture;
+class CMonster;
 
 class StartScene : public CScene
 {
@@ -18,8 +19,8 @@ public:
 private:
 	virtual void Enter() override;
 	virtual void Exit() override;
-	virtual void render(HDC dc) override;
 	virtual void update() override;
+	virtual void render(HDC dc) override;
 
 public:
 	void SetMonsterCount(int count) { _monsterCount = count; }

@@ -44,6 +44,9 @@ enum class KEY
 	CTRL,
 	ENTER,
 	ESC,
+
+	LBTN,
+	RBTN,
 	
 	LAST,
 };
@@ -60,10 +63,16 @@ class CKeyManager
 
 private :
 	vector<KeyInfo> _vecKey;
+	Vector2			_curMousePos;
 
 public :
 	void init();
 	void update();
+
+public:
 	KEY_STATE GetKeyState(KEY key);
+	Vector2 GetCurrentMousePos() { return _curMousePos; }
+
+
 };
 

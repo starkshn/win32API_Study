@@ -32,6 +32,12 @@ void StartScene::update()
 	{
 		ChangeScene(SCENE_TYPE::TOOL);
 	}
+
+	if (KEY_TAP(KEY::LBTN))
+	{
+		Vector2 lookAtPos = CameraManager::GetInstance()->GetRealPos(MOUSE_POS);
+		CameraManager::GetInstance()->SetLookAtPos(lookAtPos);
+	}
 }
 
 void StartScene::Enter()
@@ -47,6 +53,9 @@ void StartScene::Enter()
 	//CObject* otherPlayer = obj->Clone();
 	//otherPlayer->SetPos(Vector2(740.f, 384.f));
 	//AddObject(otherPlayer, GROUP_TYPE::PLAYER);
+
+	// Player 쫒아다니는거 잠시 중단
+	// CameraManager::GetInstance()->SetTarget(obj);
 
 	// 몬스터 배치
 	SetMonsterCount(8);
@@ -83,6 +92,7 @@ void StartScene::render(HDC dc)
 {
 	Vector2 resolution = CCore::GetInstance()->GetResolution();
 
+	// background rendering
 	BitBlt
 	(
 		dc,

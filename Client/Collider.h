@@ -38,11 +38,12 @@ public:
 	void SetOffsetPos(Vector2 pos) { _offsetPos = pos; }
 	void SetColliderScale(Vector2 scale) { _colliderScale = scale; }
 
-	Vector2 GetOffsetPos() { return _offsetPos; }
-	Vector2 GetColliderScale() { return _colliderScale; }
-	Vector2 GetFinalPos() { return _finalPos ; }
-	UINT GetID() { return _ID; }
-	CObject* GetColliderOwner() { return p_owner; }
+public:
+	Vector2		GetOffsetPos() { return _offsetPos; }
+	Vector2		GetColliderScale() { return _colliderScale; }
+	Vector2		GetFinalPos() { return _finalPos ; }
+	UINT		GetID() { return _ID; }
+	CObject*	GetColliderOwner() { return p_owner; }
 	
 	friend class CObject;
 };

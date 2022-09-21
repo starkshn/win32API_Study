@@ -3,6 +3,7 @@
 #include "CObject.h"
 #include "CCore.h"
 #include "SelectGDI.h"
+#include "CameraManager.h"
 
 UINT Collider::g_ID = 0;
 
@@ -49,13 +50,15 @@ void Collider::render(HDC dc)
 	SelectGDI b(dc, HBRUSH_TYPE::HOLLOW);
 	SelectGDI p(dc, pen);
 
+	Vector2 renderPos = CameraManager::GetInstance()->GetRenderPos(_finalPos);
+
 	Rectangle
 	(
 		dc,
-		static_cast<int>(_finalPos._x - _colliderScale._x / 2.f),
-		static_cast<int>(_finalPos._y - _colliderScale._y / 2.f),
-		static_cast<int>(_finalPos._x + _colliderScale._x / 2.f),
-		static_cast<int>(_finalPos._y + _colliderScale._y / 2.f)
+		static_cast<int>(renderPos._x - _colliderScale._x / 2.f),
+		static_cast<int>(renderPos._y - _colliderScale._y / 2.f),
+		static_cast<int>(renderPos._x + _colliderScale._x / 2.f),
+		static_cast<int>(renderPos._y + _colliderScale._y / 2.f)
 	);
 }
 

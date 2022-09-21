@@ -7,6 +7,7 @@
 #include "CSceneManager.h"
 #include "ColliderManager.h"
 #include "EventManager.h"
+#include "CameraManager.h"
 
 CCore::CCore()
 	:
@@ -70,11 +71,16 @@ void CCore::progress()
 	// ===============
 	CTimeManager::GetInstance()->update(); // DT계산
 	CKeyManager::GetInstance()->update(); // Key상태값 체크
+	CameraManager::GetInstance()->update();
 
 	// ============
 	// Scene Update
 	// ============
 	CSceneManager::GetInstance()->update();
+
+	// ===============
+	// Collider Update
+	// ===============
 	ColliderManager::GetInstance()->update(); // 충돌체크
 
 	// =============

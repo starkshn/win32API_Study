@@ -92,6 +92,4 @@ public :
 		return Vector2(_x * float(value), _y * float(value));
 	}
 	
-
-
 };

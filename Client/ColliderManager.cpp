@@ -27,7 +27,6 @@ void ColliderManager::update()
 			}
 		}
 	}
-
 }
 
 void ColliderManager::CollisionGroupUpdate(GROUP_TYPE left, GROUP_TYPE right)

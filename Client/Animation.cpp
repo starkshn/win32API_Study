@@ -4,9 +4,10 @@
 #include "Texture.h"
 #include "CObject.h"
 #include "CTimeManager.h"
+#include "CameraManager.h"
 
 Animation::Animation()
-	: 
+	:
 	p_animator(nullptr),
 	_animationName(),
 	_curFrame(0),
@@ -52,8 +53,10 @@ void Animation::render(HDC dc)
 
 	CObject* go = p_animator->GetOwnerObject();
 	Vector2 pos = go->GetPos();
-
-	pos += _vecAnimFrame[_curFrame]._offset; // Object Position에 Offset만큼 추가 이동위치
+	pos += _vecAnimFrame[_curFrame]._offset; // Object Position에 Offset만큼 추가 이동위치, 연산자 오버로딩
+	
+	// 렌더링 좌표로 변환
+	pos = CameraManager::GetInstance()->GetRenderPos(pos);
 
 	TransparentBlt
 	(

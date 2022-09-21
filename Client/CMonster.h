@@ -19,8 +19,8 @@ private :
 	bool			_missileFire = true;
 	Vector2			_centerAnchor;
 
-	Texture* _texture;
-	Texture* _missileTexture;
+	Texture* p_texture;
+	Texture* p_missileTexture;
 
 public :
 	CMonster();
@@ -62,6 +62,7 @@ public:
 	void SetMissileFire(bool fire) { _missileFire = fire; }
 	void SetAcc(float deltaTime) { _acc += deltaTime; }
 	
+public:
 	float GetSpeed() { return _speed; }
 	Vector2 GetCenterAnchor() { return _centerAnchor; }
 	float GetLoopDistance() { return _loopDistance; }

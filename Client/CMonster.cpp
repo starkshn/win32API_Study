@@ -9,6 +9,8 @@
 #include "ResourceManager.h"
 #include "Texture.h"
 #include "Collider.h"
+#include "Animator.h"
+#include "Animation.h"
 
 CMonster::CMonster() 
 	: 
@@ -18,12 +20,25 @@ CMonster::CMonster()
 	_dir(1),
 	_acc(0.f)
 {
-	_texture = ResourceManager::GetInstance()->LoadTexture(L"MonsterTexture", L"Textures\\gb_monster_1.bmp");
-
 	CreateCollider();
-	GetCollider()->SetColliderScale(Vector2{40.f, 40.f});
+	GetCollider()->SetOffsetPos(Vector2{0.f, 0.f});
+	GetCollider()->SetColliderScale(Vector2(30.f, 30.f));
 
 	SetObjectName(L"gb_monster_1");
+
+	// p_texture = ResourceManager::GetInstance()->LoadTexture(L"MonsterTexture", L"Textures\\gb_monster_1.bmp");
+	Texture* texture = ResourceManager::GetInstance()->LoadTexture(L"MonsterAnimationTexture", L"Textures\\Animations2.bmp");
+
+	CreateAnimator();
+	GetAnimator()->CreateAnimation(L"WALK_DOWN", texture, Vector2(0, 320), Vector2(74, 80), Vector2(74, 0), 0.08f, 10);
+	GetAnimator()->PlayAnimation(L"WALK_DOWN", true);
+
+	Animation* anim = GetAnimator()->FindAnimation(L"WALK_DOWN");
+
+	for (int i = 0; i < anim->GetMaxFrame(); ++i)
+	{
+		anim->GetAnimFrame(i)._offset = Vector2(0.f, 0.f);
+	}
 }
 
 CMonster::~CMonster()
@@ -39,7 +54,6 @@ void CMonster::update()
 	curPos._x += _speed * _dir * DeltaTime_F;
 
 	// 배회 거리 기준량을 넘어섰는지 확인
-
 	float difDis = abs(_centerAnchor._x - curPos._x) - _loopDistance;
 
 	if (0.f < difDis)
@@ -69,12 +83,14 @@ void CMonster::update()
 		SetMissileFire(false);
 
 	SetPos(curPos);
+
+	GetAnimator()->update();
 }
 
 void CMonster::render(HDC dc)
 {
-	int width = static_cast<int>(_texture->GetWidth());
-	int height = static_cast<int>(_texture->GetHeight());
+	/*int width = static_cast<int>(p_texture->GetWidth());
+	int height = static_cast<int>(p_texture->GetHeight());
 
 	Vector2 pos = GetPos();
 
@@ -85,10 +101,10 @@ void CMonster::render(HDC dc)
 		static_cast<int>(pos._y - static_cast<float>((height / 2))),
 		width,
 		height,
-		_texture->GetDC(),
+		p_texture->GetDC(),
 		0, 0, width, height,
 		RGB(255, 0, 255)
-	);
+	);*/
 
 	// Component있는 경우 호출...
 	CObject::ComponentRender(dc);
