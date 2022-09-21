@@ -84,11 +84,11 @@ void Animation::Create
 
 	AnimFrame frm = {};
 	// frameCount : 만들어내야할 프레임 갯수
-	for (int i = 0; i < frameCount; ++i)
+	for (UINT i = 0; i < frameCount; ++i)
 	{
 		frm._duration = duration;
 		frm._sliceSize = sliceSize;
-		frm._leftTop = startPos + (step * i);
+		frm._leftTop = startPos + step * (float)i;
 
 		_vecAnimFrame.push_back(frm);
 	}

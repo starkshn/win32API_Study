@@ -1,5 +1,5 @@
-﻿  Animator.cpp
-C:\Users\stark\Desktop\CPP\WinApiStudy\Client\Animation.h(55,20): warning C4267: 'return': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+﻿  Animation.cpp
+  Animator.cpp
   CameraManager.cpp
   CCore.cpp
   CKeyManager.cpp
@@ -7,7 +7,7 @@ C:\Users\stark\Desktop\CPP\WinApiStudy\Client\Animation.h(55,20): warning C4267:
   CMonster.cpp
 C:\Users\stark\Desktop\CPP\WinApiStudy\Client\ResourceManager.h(22,1): warning C4150: 불완전한 형식 'Texture'에 대한 포인터를 삭제했습니다. 소멸자가 호출되지 않습니다.
 C:\Users\stark\Desktop\CPP\WinApiStudy\Client\ResourceManager.h(3): message : 'Texture' 선언을 참조하십시오.
-C:\Users\stark\Desktop\CPP\WinApiStudy\Client\Animation.h(55,20): warning C4267: 'return': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\stark\Desktop\CPP\WinApiStudy\Client\CMonster.cpp(38,20): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
   CMissile.cpp
 C:\Users\stark\Desktop\CPP\WinApiStudy\Client\ResourceManager.h(22,1): warning C4150: 불완전한 형식 'Texture'에 대한 포인터를 삭제했습니다. 소멸자가 호출되지 않습니다.
 C:\Users\stark\Desktop\CPP\WinApiStudy\Client\ResourceManager.h(3): message : 'Texture' 선언을 참조하십시오.
@@ -21,7 +21,7 @@ C:\Users\stark\Desktop\CPP\WinApiStudy\Client\ResourceManager.h(3): message : 'T
   Func.cpp
   main.cpp
   CPlayer.cpp
-C:\Users\stark\Desktop\CPP\WinApiStudy\Client\Animation.h(55,20): warning C4267: 'return': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\stark\Desktop\CPP\WinApiStudy\Client\CPlayer.cpp(34,20): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
   MonsterMissile.cpp
   PathManager.cpp
   ResourceManager.cpp

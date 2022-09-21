@@ -31,7 +31,7 @@ CPlayer::CPlayer()
 
 	Animation* anim = GetAnimator()->FindAnimation(L"WALK_DOWN");
 
-	for (int i = 0; i < anim->GetMaxFrame(); ++i)
+	for (UINT i = 0; i < anim->GetMaxFrame(); ++i)
 	{
 		anim->GetAnimFrame(i)._offset = Vector2(0.f, -50.f);
 	}
