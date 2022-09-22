@@ -9,9 +9,11 @@ CameraManager::CameraManager()
 	:
 	_lookAtPos{},
 	_targetObject(),
-	_getTargetTime(1.f)
+	_getTargetTime(1.f),
+	_accTime(0.5f)
 {
-
+	//_lookAtPos = (Vector2)CCore::GetInstance()->GetResolution() / 2;
+	// 처음에 Normalize하는 부분때문에 추가했던 부분임.
 }
 
 CameraManager::~CameraManager()
@@ -58,7 +60,7 @@ void CameraManager::CalDiff()
 	}
 	else
 	{
-		Vector2 lookDir = _lookAtPos - _prevLookPos;
+		Vector2 lookDir = (_lookAtPos - _prevLookPos) + Vector2(0.0001f, 0.0001f);
 		_corLookPos = _prevLookPos + lookDir.Normalize() * _getTargetSpeed * DeltaTime_F;
 	}
 

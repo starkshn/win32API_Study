@@ -108,7 +108,7 @@
       <UniqueIdentifier>{c1972fe4-8234-46af-a4af-c19ad8524d74}</UniqueIdentifier>
     </Filter>
     <Filter Include="Engine\04 .Objects\Tile">
-      <UniqueIdentifier>{19b516d4-32e9-4519-a598-a635b7801f4d}</UniqueIdentifier>
+      <UniqueIdentifier>{81b46b27-1274-4b7a-90fa-56190de40cc1}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -214,9 +214,6 @@
     </ClInclude>
     <ClInclude Include="Tile.h">
       <Filter>Engine\04 .Objects\Tile</Filter>
-    </ClInclude>
-    <ClInclude Include="global.h">
-      <Filter>Engine\01. Header</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

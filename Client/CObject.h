@@ -1,9 +1,9 @@
 #pragma once
-#include "global.h"
-#include "CameraManager.h"
 
 class Collider;
 class Animator;
+
+#include "CameraManager.h"
 
 class CObject
 {

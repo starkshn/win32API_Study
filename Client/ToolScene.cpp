@@ -1,6 +1,11 @@
 #include "pch.h"
 #include "ToolScene.h"
 #include "CKeyManager.h"
+#include "ResourceManager.h"
+#include "CameraManager.h"
+#include "CCore.h"
+#include "Tile.h"
+#include "Texture.h"
 
 ToolScene::ToolScene()
 {
@@ -8,16 +13,6 @@ ToolScene::ToolScene()
 }
 
 ToolScene::~ToolScene()
-{
-
-}
-
-void ToolScene::Enter()
-{
-	// 타일 생성
-}
-
-void ToolScene::Exit()
 {
 
 }
@@ -33,6 +28,37 @@ void ToolScene::update()
 
 }
 
+void ToolScene::render(HDC dc)
+{
+	CScene::render(dc);
+};
 
+void ToolScene::Enter()
+{
+	Texture* tileTexture = ResourceManager::GetInstance()->LoadTexture(L"Tile", L"Textures\\tiles.bmp");
+
+	for (int i = 0; i < 5; ++i)
+	{
+		for (int j = 0; j < 5; ++j)
+		{
+			Tile* tile = new Tile();
+
+			tile->SetPos(Vector2(static_cast<float>(j * TILE_SIZE), static_cast<float>(i * TILE_SIZE)));
+			tile->SetTexture(tileTexture);
+
+			AddObject(tile, GROUP_TYPE::TILE);
+
+		}
+	}
+
+	// Camera Look 지정
+	Vector2 resolution = CCore::GetInstance()->GetResolution();
+	CameraManager::GetInstance()->SetLookAtPos(resolution / 2.f);
+};
+
+void ToolScene::Exit()
+{
+
+};
 
 

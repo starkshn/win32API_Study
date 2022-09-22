@@ -1,0 +1,47 @@
+#include "pch.h"
+#include "Tile.h"
+#include "Texture.h"
+#include "CameraManager.h"
+
+Tile::Tile() : p_tileTexture(nullptr), _tileIdx(3)
+{
+	SetScale(Vector2(TILE_SIZE, TILE_SIZE));
+}
+
+Tile::~Tile()
+{
+
+}
+
+void Tile::update()
+{
+
+}
+
+void Tile::render(HDC dc)
+{
+	if (nullptr == p_tileTexture || -1 == _tileIdx)
+		return;
+
+	UINT width = p_tileTexture->GetWidth();
+	UINT height = p_tileTexture->GetHeight();
+	
+	// 타일 갯수가 나온다.
+	UINT maxCol = (width / TILE_SIZE);
+	// 타일 행 갯수가 나온다. (-1 빼주어야한다. 768px이여야 하는데 767px이라서
+	UINT maxRow = (height / TILE_SIZE) - 1;
+
+	UINT curRow = static_cast<UINT>(_tileIdx / maxCol);
+	UINT curCol = static_cast<UINT>(_tileIdx % maxRow);
+
+
+	Vector2 renderPos = CameraManager::GetInstance()->GetRenderPos(GetPos());
+	Vector2 scale = GetScale();
+
+	BitBlt
+	();
+}
+
+
+
+

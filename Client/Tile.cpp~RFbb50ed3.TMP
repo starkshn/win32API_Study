@@ -1,0 +1,29 @@
+#include "pch.h"
+#include "Tile.h"
+
+Tile::Tile()
+{
+	SetScale(Vector2(TILE_SIZE, TILE_SIZE));
+}
+
+Tile::~Tile()
+{
+
+}
+void Tile::render(HDC dc)
+{
+	Vector2 renderPos = CameraManager::GetInstance()->GetRenderPos(GetPos());
+	Vector2 scale = GetScale();
+
+	Rectangle
+	(
+		dc,
+		static_cast<int>(renderPos._x),
+		static_cast<int>(renderPos._y),
+		static_cast<int>(renderPos._x + scale._x), static_cast<int>(renderPos._y + scale._y),
+		
+	);
+}
+
+
+

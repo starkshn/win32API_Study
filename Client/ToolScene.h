@@ -1,5 +1,6 @@
 #pragma once
 #include "CScene.h"
+
 class ToolScene : public CScene
 {
 private :
@@ -9,8 +10,11 @@ public :
 	virtual ~ToolScene() override;
 
 public:
-	virtual void Enter() override;
-	virtual void Exit() override;
 	virtual void update() override;
+	virtual void render(HDC dc) override;
+	virtual void Enter();
+	virtual void Exit();
+	
+
 };
 
