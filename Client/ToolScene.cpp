@@ -12,6 +12,16 @@ ToolScene::~ToolScene()
 
 }
 
+void ToolScene::Enter()
+{
+	// 타일 생성
+}
+
+void ToolScene::Exit()
+{
+
+}
+
 void ToolScene::update()
 {
 	CScene::update();
@@ -23,14 +33,6 @@ void ToolScene::update()
 
 }
 
-void ToolScene::Enter()
-{
 
-}
-
-void ToolScene::Exit()
-{
-
-}
 
 

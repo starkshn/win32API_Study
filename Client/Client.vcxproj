@@ -180,6 +180,7 @@
     <ClInclude Include="EventManager.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="Func.h" />
+    <ClInclude Include="global.h" />
     <ClInclude Include="MonsterMissile.h" />
     <ClInclude Include="PathManager.h" />
     <ClInclude Include="pch.h" />
@@ -193,6 +194,7 @@
     <ClInclude Include="targetver.h" />
     <ClInclude Include="Texture.h" />
     <ClInclude Include="ThreeMissile.h" />
+    <ClInclude Include="Tile.h" />
     <ClInclude Include="ToolScene.h" />
     <ClInclude Include="SelectGDI.h" />
   </ItemGroup>
@@ -232,6 +234,7 @@
     <ClCompile Include="StartScene.cpp" />
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="ThreeMissile.cpp" />
+    <ClCompile Include="Tile.cpp" />
     <ClCompile Include="ToolScene.cpp" />
     <ClCompile Include="SelectGDI.cpp" />
   </ItemGroup>
