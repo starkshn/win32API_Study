@@ -1,4 +1,41 @@
-﻿cl : 명령줄 warning D9030: '/Yc'이(가) 다중 처리와 호환되지 않습니다. /MP 스위치를 무시합니다.
+﻿  Animation.cpp
+  Animator.cpp
+  CameraManager.cpp
+  CCore.cpp
   CKeyManager.cpp
+  CCharingMissile.cpp
+  CMonster.cpp
+C:\Users\stark\Desktop\CPP\WinApiStudy\Client\ResourceManager.h(23,1): warning C4150: 불완전한 형식 'Texture'에 대한 포인터를 삭제했습니다. 소멸자가 호출되지 않습니다.
+C:\Users\stark\Desktop\CPP\WinApiStudy\Client\ResourceManager.h(4): message : 'Texture' 선언을 참조하십시오.
+C:\Users\stark\Desktop\CPP\WinApiStudy\Client\CMonster.cpp(38,20): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+  CMissile.cpp
+C:\Users\stark\Desktop\CPP\WinApiStudy\Client\ResourceManager.h(23,1): warning C4150: 불완전한 형식 'Texture'에 대한 포인터를 삭제했습니다. 소멸자가 호출되지 않습니다.
+C:\Users\stark\Desktop\CPP\WinApiStudy\Client\ResourceManager.h(4): message : 'Texture' 선언을 참조하십시오.
+  CObject.cpp
+  Collider.cpp
+  ColliderManager.cpp
+  CScene.cpp
+  CSceneManager.cpp
+  CTimeManager.cpp
+  EventManager.cpp
+  Func.cpp
   main.cpp
 C:\Users\stark\Desktop\CPP\WinApiStudy\Client\main.cpp(316,1): error C2857: /Ycpch.h 명령줄 옵션과 함께 지정한 '#include' 문이 소스 파일에 없습니다.
+  CPlayer.cpp
+  MonsterMissile.cpp
+  PathManager.cpp
+  ResourceManager.cpp
+C:\Users\stark\Desktop\CPP\WinApiStudy\Client\ResourceManager.h(23,1): warning C4150: 불완전한 형식 'Texture'에 대한 포인터를 삭제했습니다. 소멸자가 호출되지 않습니다.
+C:\Users\stark\Desktop\CPP\WinApiStudy\Client\ResourceManager.h(4): message : 'Texture' 선언을 참조하십시오.
+  Resources.cpp
+  Sound.cpp
+  StartScene.cpp
+C:\Users\stark\Desktop\CPP\WinApiStudy\Client\StartScene.cpp(101,13): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\stark\Desktop\CPP\WinApiStudy\Client\StartScene.cpp(100,13): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Texture.cpp
+  ThreeMissile.cpp
+C:\Users\stark\Desktop\CPP\WinApiStudy\Client\ResourceManager.h(23,1): warning C4150: 불완전한 형식 'Texture'에 대한 포인터를 삭제했습니다. 소멸자가 호출되지 않습니다.
+C:\Users\stark\Desktop\CPP\WinApiStudy\Client\ResourceManager.h(4): message : 'Texture' 선언을 참조하십시오.
+  Tile.cpp
+  ToolScene.cpp
+  SelectGDI.cpp

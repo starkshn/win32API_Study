@@ -90,16 +90,6 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <IncludeInUnityFile>true</IncludeInUnityFile>
-      <OrderInUnityFile>100</OrderInUnityFile>
-      <CombineFilesOnlyFromTheSameFolder>false</CombineFilesOnlyFromTheSameFolder>
-      <MinFilesInUnityFile>10</MinFilesInUnityFile>
-      <MaxFilesInUnityFile>0</MaxFilesInUnityFile>
-      <MinUnityFiles>1</MinUnityFiles>
-      <UnityFilesDirectory>$(ProjectDir)\Unity\</UnityFilesDirectory>
-      <MultiProcessorCompilation>true</MultiProcessorCompilation>
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -128,16 +118,8 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeader>Create</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <IncludeInUnityFile>true</IncludeInUnityFile>
-      <OrderInUnityFile>100</OrderInUnityFile>
-      <CombineFilesOnlyFromTheSameFolder>false</CombineFilesOnlyFromTheSameFolder>
-      <MinFilesInUnityFile>10</MinFilesInUnityFile>
-      <MaxFilesInUnityFile>0</MaxFilesInUnityFile>
-      <MinUnityFiles>1</MinUnityFiles>
-      <UnityFilesDirectory>$(ProjectDir)\Unity\</UnityFilesDirectory>
-      <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -198,9 +180,6 @@
     <ClInclude Include="ToolScene.h" />
     <ClInclude Include="SelectGDI.h" />
   </ItemGroup>
-  <PropertyGroup>
-    <EnableUnitySupport>true</EnableUnitySupport>
-  </PropertyGroup>
   <ItemGroup>
     <ClCompile Include="Animation.cpp" />
     <ClCompile Include="Animator.cpp" />
