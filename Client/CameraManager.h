@@ -11,7 +11,6 @@ private:
 	Vector2		_corLookPos; // 이전위치와 현재위치의 보정위치
 	Vector2		_prevLookPos; // 카메라가 보는 이전 프레임 위치
 	
-
 	CObject*	_targetObject; // 카메라 타겟 오브젝트
 	Vector2		_diff; // 해상도 중심위치와, 카메라 LookAt간의 차이값.
 
@@ -28,6 +27,7 @@ public:
 public:
 	void SetLookAtPos(Vector2 pos) 
 	{ 
+		// 등속도 운동으로 속도를 구함.
 		_lookAtPos = pos;
 		float moveDis = (_lookAtPos - _prevLookPos).Length();
 
@@ -39,7 +39,9 @@ public:
 public:
 	Vector2		GetLookPos() { return _corLookPos; } // 현재 보고있는 위치
 	CObject*	GetTarget() { return _targetObject; }
+	// 렌더링 좌표
 	Vector2		GetRenderPos(Vector2 objPos) { return (objPos - _diff); }
+	// 실제 좌표
 	Vector2		GetRealPos(Vector2 renderPos) { return (renderPos + _diff); }
 	
 };
