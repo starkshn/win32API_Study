@@ -1,7 +1,10 @@
 #include "pch.h"
 #include "CScene.h"
+#include "ResourceManager.h"
 #include "CObject.h"
 #include "CCore.h"
+#include "Tile.h"
+#include "Texture.h"
 
 CScene::CScene()
 {
@@ -82,6 +85,26 @@ void CScene::DeleteAllGroups()
 	{
 		// 모든 오브젝트 싹다 삭제.
 		DeleteGroupObjects(static_cast<GROUP_TYPE>(i));
+	}
+}
+
+void CScene::CreateTile(UINT xCount, UINT yCount)
+{
+	Texture* tileTexture = ResourceManager::GetInstance()->LoadTexture(L"Tile", L"Textures\\tiles.bmp");
+
+	for (UINT y = 0; y < yCount; ++y)
+	{
+		for (UINT x = 0; x < xCount; ++x)
+		{
+			Tile* tile = new Tile();
+
+			tile->SetPos(Vector2(static_cast<float>(x * TILE_SIZE), static_cast<float>(y * TILE_SIZE)));
+
+			tile->SetTexture(tileTexture);
+
+			AddObject(tile, GROUP_TYPE::TILE);
+
+		}
 	}
 }
 

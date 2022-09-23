@@ -22,20 +22,25 @@ public:
 	virtual void Exit() abstract; // 해당 Scene 을 탈출 시 사용
 
 public:
-	void SetName(wstring strName) { _sceneName = strName; }
-
-	const wstring& GetName() const { return _sceneName; }
-	const vector<CObject*>& GetGroupObjects(const GROUP_TYPE& type)
-	{
-		return _objects[static_cast<UINT>(type)];
-	}
-
 	void AddObject(CObject* obj, GROUP_TYPE type)
 	{
 		_objects[static_cast<unsigned int>(type)].push_back(obj);
 	}
 	void DeleteGroupObjects(GROUP_TYPE groupType);
 	void DeleteAllGroups();
+	void CreateTile(UINT xCount, UINT yCount);
+
+public:
+	void SetName(wstring strName) { _sceneName = strName; }
+
+public:
+	const wstring& GetName() const { return _sceneName; }
+	const vector<CObject*>& GetGroupObjects(const GROUP_TYPE& type)
+	{
+		return _objects[static_cast<UINT>(type)];
+	}
+
+	
 
 };
 
