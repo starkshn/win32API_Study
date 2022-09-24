@@ -24,21 +24,26 @@ void ToolScene::update()
 {
 	CScene::update();
 
+	// TOOL_SCENE_SERVICE service = TOOL_SCENE_SERVICE::CHANGE_IMAGE_IDX;
+	// ToolSceneService(service);
+
+	SetTileIdx();
+
 	if (KEY_TAP(KEY::ENTER))
 	{
 		ChangeScene(SCENE_TYPE::START);
 	}
-
 }
 
 void ToolScene::render(HDC dc)
 {
 	CScene::render(dc);
+
+
 };
 
 void ToolScene::Enter()
 {
-	
 	// 타일 생성
 	CreateTile(5, 5);
 
@@ -49,8 +54,48 @@ void ToolScene::Enter()
 
 void ToolScene::Exit()
 {
+	
+}
 
+void ToolScene::SetTileIdx()
+{
+	// 마우스 클릭이 있을 때만 동작하게 하는 부분.
+	if (KEY_TAP(KEY::LBTN))
+	{
+		// 마우스 실제 좌표를 구하는 작업.
+		Vector2 mousePos = MOUSE_POS;
+		mousePos = CameraManager::GetInstance()->GetRealPos(mousePos);
+
+		UINT tileXCount = GetTileX();
+		UINT tileYCount = GetTileY();
+
+		UINT col = static_cast<UINT>(mousePos._x / TILE_SIZE);
+		UINT row = static_cast<UINT>(mousePos._y / TILE_SIZE);
+		
+		UINT tileIdx = row * tileXCount + col;
+		
+		const vector<CObject*>& vecTile = GetGroupObjects(GROUP_TYPE::TILE);
+		dynamic_cast<Tile*>(vecTile[tileIdx])->AddImageIdx();
+	}
+}
+
+
+
+
+void ToolScene::ToolSceneService(TOOL_SCENE_SERVICE srv)
+{
+	switch (srv)
+	{
+		case TOOL_SCENE_SERVICE::CHANGE_IMAGE_IDX:
+		{
+			Vector2 mousePos = MOUSE_POS;
+
+
+		}
+			break;
+	}
 };
+
 
 // =======================
 // Tile Count window Proc
@@ -77,8 +122,7 @@ INT_PTR CALLBACK TileCountProc(HWND hDlg, UINT message, WPARAM wParam, LPARAM lP
 			// 실패하면 nullptr
 			ToolScene* toolScene = dynamic_cast<ToolScene*>(curScene);
 			assert(toolScene);
-
-
+			
 			toolScene->DeleteGroupObjects(GROUP_TYPE::TILE);
 			toolScene->CreateTile(xCount, yCount);
 
@@ -94,4 +138,6 @@ INT_PTR CALLBACK TileCountProc(HWND hDlg, UINT message, WPARAM wParam, LPARAM lP
 	}
 	return (INT_PTR)FALSE;
 }
+
+
 

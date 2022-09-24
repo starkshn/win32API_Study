@@ -3,7 +3,7 @@
 #include "Texture.h"
 #include "CameraManager.h"
 
-Tile::Tile() : p_tileTexture(nullptr), _tileIdx(10)
+Tile::Tile() : p_tileTexture(nullptr), _tileImageIdx(0)
 {
 	SetScale(Vector2(TILE_SIZE, TILE_SIZE));
 }
@@ -20,7 +20,7 @@ void Tile::update()
 
 void Tile::render(HDC dc)
 {
-	if (nullptr == p_tileTexture || -1 == _tileIdx)
+	if (nullptr == p_tileTexture || -1 == _tileImageIdx)
 		return;
 
 	UINT width = p_tileTexture->GetWidth();
@@ -31,8 +31,8 @@ void Tile::render(HDC dc)
 	// 타일 행 갯수가 나온다. (-1 빼주어야한다. 768px이여야 하는데 767px이라서
 	UINT maxRow = (height / TILE_SIZE);
 
-	UINT curRow = static_cast<UINT>(_tileIdx / maxCol);
-	UINT curCol = static_cast<UINT>(_tileIdx % maxRow);
+	UINT curRow = static_cast<UINT>(_tileImageIdx / maxCol);
+	UINT curCol = static_cast<UINT>(_tileImageIdx % maxRow);
 
 	// 현재 행이 최대행을 넘지않게 하기 위한 예외처리
 	if (maxRow <= curRow)

@@ -14,11 +14,14 @@ public:
 
 private:
 	Texture*	p_tileTexture;
-	int			_tileIdx;
+	int			_tileImageIdx;
 
 private:
 	virtual void update() override;
 	virtual void render(HDC dc) override;
+
+public:
+	void AddImageIdx() { ++_tileImageIdx; };
 
 public:
 	void SetTexture(Texture* tileTexture)

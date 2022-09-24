@@ -7,6 +7,9 @@
 #include "Texture.h"
 
 CScene::CScene()
+	:
+	_tileXCount(),
+	_tileYCount()
 {
 	
 }
@@ -90,6 +93,9 @@ void CScene::DeleteAllGroups()
 
 void CScene::CreateTile(UINT xCount, UINT yCount)
 {
+	_tileXCount = xCount;
+	_tileYCount = yCount;
+
 	Texture* tileTexture = ResourceManager::GetInstance()->LoadTexture(L"Tile", L"Textures\\tiles.bmp");
 
 	for (UINT y = 0; y < yCount; ++y)

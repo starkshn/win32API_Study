@@ -14,6 +14,13 @@ public:
 	virtual void render(HDC dc) override;
 	virtual void Enter();
 	virtual void Exit();
+
+public:
+	void SetTileIdx();
+	void ToolSceneService(TOOL_SCENE_SERVICE srv);
+	
+public:
+
 	
 };
 

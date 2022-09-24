@@ -3,11 +3,21 @@ i:{00000000-0000-0000-0000-000000000000}:WinApiStudy.sln
 ++Client
 i:{00000000-0000-0000-0000-000000000000}:Client
 ++참조
-i:{f444dcb7-596f-4391-ae5f-b65ce304e1cc}:{331E38CC-EB50-400C-8908-ED8858259FAC}
+i:{f444dcb7-596f-4391-ae5f-b65ce304e1cc}:{72752755-303D-4DCD-80AC-65FCDB1536DE}
 ++외부 종속성
-i:{f444dcb7-596f-4391-ae5f-b65ce304e1cc}:{D3AE865E-4B62-4A00-AF19-615456314330}
+i:{f444dcb7-596f-4391-ae5f-b65ce304e1cc}:{298D9ADF-AF6A-4AF5-BA88-03981D7AACB5}
 ++Default
 i:{f444dcb7-596f-4391-ae5f-b65ce304e1cc}:Default
+++리소스 파일
+i:{f444dcb7-596f-4391-ae5f-b65ce304e1cc}:Default\리소스 파일
+++Client.h
+i:{f444dcb7-596f-4391-ae5f-b65ce304e1cc}:C:\Users\stark\Desktop\CPP\WinApiStudy\Client\Client.h
+++framework.h
+i:{f444dcb7-596f-4391-ae5f-b65ce304e1cc}:C:\Users\stark\Desktop\CPP\WinApiStudy\Client\framework.h
+++Resource.h
+i:{f444dcb7-596f-4391-ae5f-b65ce304e1cc}:C:\Users\stark\Desktop\CPP\WinApiStudy\Client\Resource.h
+++targetver.h
+i:{f444dcb7-596f-4391-ae5f-b65ce304e1cc}:C:\Users\stark\Desktop\CPP\WinApiStudy\Client\targetver.h
 ++Engine
 i:{f444dcb7-596f-4391-ae5f-b65ce304e1cc}:Engine
 ++01. Header
@@ -18,6 +28,10 @@ i:{f444dcb7-596f-4391-ae5f-b65ce304e1cc}:C:\Users\stark\Desktop\CPP\WinApiStudy\
 i:{f444dcb7-596f-4391-ae5f-b65ce304e1cc}:C:\Users\stark\Desktop\CPP\WinApiStudy\Client\struct.h
 ++02. Core
 i:{f444dcb7-596f-4391-ae5f-b65ce304e1cc}:Engine\02. Core
+++CCore.cpp
+i:{f444dcb7-596f-4391-ae5f-b65ce304e1cc}:C:\Users\stark\Desktop\CPP\WinApiStudy\Client\CCore.cpp
+++CCore.h
+i:{f444dcb7-596f-4391-ae5f-b65ce304e1cc}:C:\Users\stark\Desktop\CPP\WinApiStudy\Client\CCore.h
 ++03. Managers
 i:{f444dcb7-596f-4391-ae5f-b65ce304e1cc}:Engine\03. Managers
 ++CameraManager
@@ -30,6 +44,10 @@ i:{f444dcb7-596f-4391-ae5f-b65ce304e1cc}:C:\Users\stark\Desktop\CPP\WinApiStudy\
 i:{f444dcb7-596f-4391-ae5f-b65ce304e1cc}:Engine\03. Managers\CollierManager
 ++CTimeManager
 i:{f444dcb7-596f-4391-ae5f-b65ce304e1cc}:Engine\03. Managers\CTimeManager
+++CTimeManager.cpp
+i:{f444dcb7-596f-4391-ae5f-b65ce304e1cc}:C:\Users\stark\Desktop\CPP\WinApiStudy\Client\CTimeManager.cpp
+++CTimeManager.h
+i:{f444dcb7-596f-4391-ae5f-b65ce304e1cc}:C:\Users\stark\Desktop\CPP\WinApiStudy\Client\CTimeManager.h
 ++EventManager
 i:{f444dcb7-596f-4391-ae5f-b65ce304e1cc}:Engine\03. Managers\EventManager
 ++KeyManager
@@ -53,6 +71,10 @@ i:{f444dcb7-596f-4391-ae5f-b65ce304e1cc}:Engine\04 .Objects\CMissile\CMissile
 i:{f444dcb7-596f-4391-ae5f-b65ce304e1cc}:Engine\04 .Objects\CMissile\ChargingMissile
 ++MonsterMissile
 i:{f444dcb7-596f-4391-ae5f-b65ce304e1cc}:Engine\04 .Objects\CMissile\MonsterMissile
+++MonsterMissile.cpp
+i:{f444dcb7-596f-4391-ae5f-b65ce304e1cc}:C:\Users\stark\Desktop\CPP\WinApiStudy\Client\MonsterMissile.cpp
+++MonsterMissile.h
+i:{f444dcb7-596f-4391-ae5f-b65ce304e1cc}:C:\Users\stark\Desktop\CPP\WinApiStudy\Client\MonsterMissile.h
 ++ThreeMissile
 i:{f444dcb7-596f-4391-ae5f-b65ce304e1cc}:Engine\04 .Objects\CMissile\ThreeMissile
 ++Monster
@@ -63,12 +85,12 @@ i:{f444dcb7-596f-4391-ae5f-b65ce304e1cc}:C:\Users\stark\Desktop\CPP\WinApiStudy\
 i:{f444dcb7-596f-4391-ae5f-b65ce304e1cc}:C:\Users\stark\Desktop\CPP\WinApiStudy\Client\CMonster.h
 ++Player
 i:{f444dcb7-596f-4391-ae5f-b65ce304e1cc}:Engine\04 .Objects\Player
-++CPlayer.cpp
-i:{f444dcb7-596f-4391-ae5f-b65ce304e1cc}:C:\Users\stark\Desktop\CPP\WinApiStudy\Client\CPlayer.cpp
-++CPlayer.h
-i:{f444dcb7-596f-4391-ae5f-b65ce304e1cc}:C:\Users\stark\Desktop\CPP\WinApiStudy\Client\CPlayer.h
 ++Tile
 i:{f444dcb7-596f-4391-ae5f-b65ce304e1cc}:Engine\04 .Objects\Tile
+++Tile.cpp
+i:{f444dcb7-596f-4391-ae5f-b65ce304e1cc}:C:\Users\stark\Desktop\CPP\WinApiStudy\Client\Tile.cpp
+++Tile.h
+i:{f444dcb7-596f-4391-ae5f-b65ce304e1cc}:C:\Users\stark\Desktop\CPP\WinApiStudy\Client\Tile.h
 ++CObject.cpp
 i:{f444dcb7-596f-4391-ae5f-b65ce304e1cc}:C:\Users\stark\Desktop\CPP\WinApiStudy\Client\CObject.cpp
 ++CObject.h
@@ -79,6 +101,10 @@ i:{f444dcb7-596f-4391-ae5f-b65ce304e1cc}:Engine\05. Resources
 i:{f444dcb7-596f-4391-ae5f-b65ce304e1cc}:Engine\05. Resources\Sound
 ++Texture
 i:{f444dcb7-596f-4391-ae5f-b65ce304e1cc}:Engine\05. Resources\Texture
+++Texture.cpp
+i:{f444dcb7-596f-4391-ae5f-b65ce304e1cc}:C:\Users\stark\Desktop\CPP\WinApiStudy\Client\Texture.cpp
+++Texture.h
+i:{f444dcb7-596f-4391-ae5f-b65ce304e1cc}:C:\Users\stark\Desktop\CPP\WinApiStudy\Client\Texture.h
 ++Resources.cpp
 i:{f444dcb7-596f-4391-ae5f-b65ce304e1cc}:C:\Users\stark\Desktop\CPP\WinApiStudy\Client\Resources.cpp
 ++Resources.h
@@ -107,10 +133,6 @@ i:{f444dcb7-596f-4391-ae5f-b65ce304e1cc}:Engine\07. Component
 i:{f444dcb7-596f-4391-ae5f-b65ce304e1cc}:Engine\07. Component\Animator
 ++Animation
 i:{f444dcb7-596f-4391-ae5f-b65ce304e1cc}:Engine\07. Component\Animator\Animation
-++Animation.cpp
-i:{f444dcb7-596f-4391-ae5f-b65ce304e1cc}:C:\Users\stark\Desktop\CPP\WinApiStudy\Client\Animation.cpp
-++Animation.h
-i:{f444dcb7-596f-4391-ae5f-b65ce304e1cc}:C:\Users\stark\Desktop\CPP\WinApiStudy\Client\Animation.h
 ++Animator.cpp
 i:{f444dcb7-596f-4391-ae5f-b65ce304e1cc}:C:\Users\stark\Desktop\CPP\WinApiStudy\Client\Animator.cpp
 ++Animator.h
@@ -551,8 +573,6 @@ e:{f444dcb7-596f-4391-ae5f-b65ce304e1cc}:C:\PROGRAM FILES (X86)\WINDOWS KITS\10\
 e:{f444dcb7-596f-4391-ae5f-b65ce304e1cc}:C:\PROGRAM FILES (X86)\WINDOWS KITS\10\INCLUDE\10.0.19041.0\UM\THREADPOOLAPISET.H
 ++threadpoollegacyapiset.h
 e:{f444dcb7-596f-4391-ae5f-b65ce304e1cc}:C:\PROGRAM FILES (X86)\WINDOWS KITS\10\INCLUDE\10.0.19041.0\UM\THREADPOOLLEGACYAPISET.H
-++Tile.h
-i:{f444dcb7-596f-4391-ae5f-b65ce304e1cc}:C:\Users\stark\Desktop\CPP\WinApiStudy\Client\Tile.h
 ++time.h
 e:{f444dcb7-596f-4391-ae5f-b65ce304e1cc}:C:\PROGRAM FILES (X86)\WINDOWS KITS\10\INCLUDE\10.0.19041.0\UCRT\TIME.H
 ++timeapi.h
@@ -719,28 +739,16 @@ e:{f444dcb7-596f-4391-ae5f-b65ce304e1cc}:C:\PROGRAM FILES\MICROSOFT VISUAL STUDI
 e:{f444dcb7-596f-4391-ae5f-b65ce304e1cc}:C:\PROGRAM FILES\MICROSOFT VISUAL STUDIO\2022\COMMUNITY\VC\TOOLS\MSVC\14.31.31103\INCLUDE\YVALS_CORE.H
 ++zmmintrin.h
 e:{f444dcb7-596f-4391-ae5f-b65ce304e1cc}:C:\PROGRAM FILES\MICROSOFT VISUAL STUDIO\2022\COMMUNITY\VC\TOOLS\MSVC\14.31.31103\INCLUDE\ZMMINTRIN.H
-++리소스 파일
-i:{f444dcb7-596f-4391-ae5f-b65ce304e1cc}:Default\리소스 파일
-++Client.h
-i:{f444dcb7-596f-4391-ae5f-b65ce304e1cc}:C:\Users\stark\Desktop\CPP\WinApiStudy\Client\Client.h
-++framework.h
-i:{f444dcb7-596f-4391-ae5f-b65ce304e1cc}:C:\Users\stark\Desktop\CPP\WinApiStudy\Client\framework.h
-++Resource.h
-i:{f444dcb7-596f-4391-ae5f-b65ce304e1cc}:C:\Users\stark\Desktop\CPP\WinApiStudy\Client\Resource.h
-++targetver.h
-i:{f444dcb7-596f-4391-ae5f-b65ce304e1cc}:C:\Users\stark\Desktop\CPP\WinApiStudy\Client\targetver.h
-++CCore.cpp
-i:{f444dcb7-596f-4391-ae5f-b65ce304e1cc}:C:\Users\stark\Desktop\CPP\WinApiStudy\Client\CCore.cpp
-++CCore.h
-i:{f444dcb7-596f-4391-ae5f-b65ce304e1cc}:C:\Users\stark\Desktop\CPP\WinApiStudy\Client\CCore.h
+++Client.ico
+i:{f444dcb7-596f-4391-ae5f-b65ce304e1cc}:C:\Users\stark\Desktop\CPP\WinApiStudy\Client\Client.ico
+++Client.rc
+i:{f444dcb7-596f-4391-ae5f-b65ce304e1cc}:C:\Users\stark\Desktop\CPP\WinApiStudy\Client\Client.rc
+++small.ico
+i:{f444dcb7-596f-4391-ae5f-b65ce304e1cc}:C:\Users\stark\Desktop\CPP\WinApiStudy\Client\small.ico
 ++ColliderManager.cpp
 i:{f444dcb7-596f-4391-ae5f-b65ce304e1cc}:C:\Users\stark\Desktop\CPP\WinApiStudy\Client\ColliderManager.cpp
 ++ColliderManager.h
 i:{f444dcb7-596f-4391-ae5f-b65ce304e1cc}:C:\Users\stark\Desktop\CPP\WinApiStudy\Client\ColliderManager.h
-++CTimeManager.cpp
-i:{f444dcb7-596f-4391-ae5f-b65ce304e1cc}:C:\Users\stark\Desktop\CPP\WinApiStudy\Client\CTimeManager.cpp
-++CTimeManager.h
-i:{f444dcb7-596f-4391-ae5f-b65ce304e1cc}:C:\Users\stark\Desktop\CPP\WinApiStudy\Client\CTimeManager.h
 ++EventManager.cpp
 i:{f444dcb7-596f-4391-ae5f-b65ce304e1cc}:C:\Users\stark\Desktop\CPP\WinApiStudy\Client\EventManager.cpp
 ++EventManager.h
@@ -765,31 +773,23 @@ i:{f444dcb7-596f-4391-ae5f-b65ce304e1cc}:C:\Users\stark\Desktop\CPP\WinApiStudy\
 i:{f444dcb7-596f-4391-ae5f-b65ce304e1cc}:C:\Users\stark\Desktop\CPP\WinApiStudy\Client\CMissile.cpp
 ++CMissile.h
 i:{f444dcb7-596f-4391-ae5f-b65ce304e1cc}:C:\Users\stark\Desktop\CPP\WinApiStudy\Client\CMissile.h
-++MonsterMissile.cpp
-i:{f444dcb7-596f-4391-ae5f-b65ce304e1cc}:C:\Users\stark\Desktop\CPP\WinApiStudy\Client\MonsterMissile.cpp
-++MonsterMissile.h
-i:{f444dcb7-596f-4391-ae5f-b65ce304e1cc}:C:\Users\stark\Desktop\CPP\WinApiStudy\Client\MonsterMissile.h
 ++ThreeMissile.cpp
 i:{f444dcb7-596f-4391-ae5f-b65ce304e1cc}:C:\Users\stark\Desktop\CPP\WinApiStudy\Client\ThreeMissile.cpp
 ++ThreeMissile.h
 i:{f444dcb7-596f-4391-ae5f-b65ce304e1cc}:C:\Users\stark\Desktop\CPP\WinApiStudy\Client\ThreeMissile.h
+++CPlayer.cpp
+i:{f444dcb7-596f-4391-ae5f-b65ce304e1cc}:C:\Users\stark\Desktop\CPP\WinApiStudy\Client\CPlayer.cpp
+++CPlayer.h
+i:{f444dcb7-596f-4391-ae5f-b65ce304e1cc}:C:\Users\stark\Desktop\CPP\WinApiStudy\Client\CPlayer.h
 ++Sound.cpp
 i:{f444dcb7-596f-4391-ae5f-b65ce304e1cc}:C:\Users\stark\Desktop\CPP\WinApiStudy\Client\Sound.cpp
 ++Sound.h
 i:{f444dcb7-596f-4391-ae5f-b65ce304e1cc}:C:\Users\stark\Desktop\CPP\WinApiStudy\Client\Sound.h
-++Texture.cpp
-i:{f444dcb7-596f-4391-ae5f-b65ce304e1cc}:C:\Users\stark\Desktop\CPP\WinApiStudy\Client\Texture.cpp
-++Texture.h
-i:{f444dcb7-596f-4391-ae5f-b65ce304e1cc}:C:\Users\stark\Desktop\CPP\WinApiStudy\Client\Texture.h
+++Animation.cpp
+i:{f444dcb7-596f-4391-ae5f-b65ce304e1cc}:C:\Users\stark\Desktop\CPP\WinApiStudy\Client\Animation.cpp
+++Animation.h
+i:{f444dcb7-596f-4391-ae5f-b65ce304e1cc}:C:\Users\stark\Desktop\CPP\WinApiStudy\Client\Animation.h
 ++SelectGDI.cpp
 i:{f444dcb7-596f-4391-ae5f-b65ce304e1cc}:C:\Users\stark\Desktop\CPP\WinApiStudy\Client\SelectGDI.cpp
 ++SelectGDI.h
 i:{f444dcb7-596f-4391-ae5f-b65ce304e1cc}:C:\Users\stark\Desktop\CPP\WinApiStudy\Client\SelectGDI.h
-++Client.ico
-i:{f444dcb7-596f-4391-ae5f-b65ce304e1cc}:C:\Users\stark\Desktop\CPP\WinApiStudy\Client\Client.ico
-++Client.rc
-i:{f444dcb7-596f-4391-ae5f-b65ce304e1cc}:C:\Users\stark\Desktop\CPP\WinApiStudy\Client\Client.rc
-++small.ico
-i:{f444dcb7-596f-4391-ae5f-b65ce304e1cc}:C:\Users\stark\Desktop\CPP\WinApiStudy\Client\small.ico
-++Tile.cpp
-i:{f444dcb7-596f-4391-ae5f-b65ce304e1cc}:C:\Users\stark\Desktop\CPP\WinApiStudy\Client\Tile.cpp

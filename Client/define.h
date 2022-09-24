@@ -85,3 +85,12 @@ enum class EVENT_TYPE
 
 	END,
 };
+
+enum class TOOL_SCENE_SERVICE
+{
+	CHANGE_IMAGE_IDX,
+
+
+
+	END,
+};

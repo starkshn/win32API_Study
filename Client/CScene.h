@@ -8,6 +8,8 @@ class CScene
 private :
 	vector<CObject*> _objects[static_cast<unsigned int>(GROUP_TYPE::END)]; // 오브젝트들을 저장 및 관리할 벡터를 그룹 갯수만큼 선언
 	wstring		_sceneName;
+	UINT		_tileXCount;
+	UINT		_tileYCount;
 
 public:
 	CScene();
@@ -39,7 +41,8 @@ public:
 	{
 		return _objects[static_cast<UINT>(type)];
 	}
-
+	UINT GetTileX() { return _tileXCount;  };
+	UINT GetTileY() { return _tileYCount;  };
 	
 
 };
