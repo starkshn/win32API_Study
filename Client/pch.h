@@ -1,31 +1,3 @@
-#pragma once
-
-// 미리 컴파일된 헤더
-#include <windows.h>
-#include <iostream>
-#include "define.h"
-#include "struct.h"
-#include <math.h>
-#include <assert.h>
-
-#include <vector>
-using std::vector;
-
-#include <map>
-using std::map;
-using std::make_pair;
-
-#include <string>
-using std::string;
-using std::wstring;
-
-using std::shared_ptr;
-
-// image
-#pragma comment(lib, "Msimg32.lib")
-
-#include "Func.h"
-
-
-
-
+version https://git-lfs.github.com/spec/v1
+oid sha256:fe19f4ce50a706a0ad3d8755e840cd33450f1f4716eaac27445e4c6511d3039c
+size 398

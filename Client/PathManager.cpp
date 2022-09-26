@@ -1,32 +1,3 @@
-#include "pch.h"
-#include "PathManager.h"
-#include "CCore.h"
-
-PathManager::PathManager() : _contentsPath()
-{
-
-}
-PathManager::~PathManager()
-{
-
-}
-
-void PathManager::init() // 경로 찾아내야한다.
-{
-	GetCurrentDirectory(255, _contentsPath);
-
-	int len = static_cast<int>(wcslen(_contentsPath));
-
-	for (int i = len - 1; i >= 0; --i)
-	{
-		if ('\\' == _contentsPath[i])
-		{
-			_contentsPath[i] = '\0';
-			break;
-		}
-	}
-
-	wcscat_s(_contentsPath, 255, L"\\bin\\Contents\\");
-	
-	// SetWindowText(CCore::GetInstance()->GetMainHwnd(), _contentsPath);
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:fa1323cd11fc6d1972e29d845bdec1f20c483cdb3af3cdd5893b9eee30c478d0
+size 570

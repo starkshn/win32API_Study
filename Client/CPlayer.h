@@ -1,26 +1,3 @@
-#pragma once
-#include "CObject.h"
-#include "CCharingMissile.h"
-#include "Collider.h"
-
-class Texture;
-
-class CPlayer : public CObject
-{
-private:
-	CLONE(CPlayer);
-	// Texture*	p_myObject;
-
-public :
-	CPlayer();
-	virtual ~CPlayer() override;
-
-public:
-	virtual void update() final;
-	virtual void render(HDC dc) final;
-
-public :
-	void CreateMissile();
-	void CreateThreeMissile();
-
-};
+version https://git-lfs.github.com/spec/v1
+oid sha256:437a12c489bf7e552f69c955805449ed976052154bae0bde5d74ccd5f864f15c
+size 402

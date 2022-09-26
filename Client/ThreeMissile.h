@@ -1,33 +1,3 @@
-#pragma once
-#include "CObject.h"
-#include "CMissile.h"
-
-class CPlayer;
-class Texture;
-class Coliider;
-
-class ThreeMissile : public CObject
-{
-private:
-	CLONE(ThreeMissile);
-	int			_id = 0;
-	Texture*	p_missileTexture;
-
-public:
-	ThreeMissile();
-	virtual ~ThreeMissile() override;
-
-public:
-	void SetId(int id) { _id = id; }
-	int GetId() { return _id; }
-
-public:
-	virtual void update() override;
-	virtual void render(HDC dc) override;
-
-public:
-	virtual void OnCollisionEnter(Collider* other) final;
-	virtual void OnCollisionStay(Collider* other) final;
-	virtual void OnCollisionExit(Collider* other) final;
-};
-
+version https://git-lfs.github.com/spec/v1
+oid sha256:da75eaa1ca93d6b02906b522190280caf9a3a19315ab7ca4f9781e6e09103cf4
+size 640

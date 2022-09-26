@@ -1,27 +1,3 @@
-#pragma once
-
-class CScene;
-
-class CSceneManager
-{
-	SINGLE(CSceneManager);
-
-private :
-	CScene* p_scenes[static_cast<unsigned int>(SCENE_TYPE::END)]; // ¸ðµç ¾À µî·Ï
-	CScene* p_curScene; // ÇöÀç ¾À
-
-private:
-	void ChangeRealScene(SCENE_TYPE sceneType);
-
-	friend class EventManager;
-
-public : 
-	void init();
-	void update();
-	void render(HDC sceneDC);
-	
-public:
-	CScene* GetCurScene() { return p_curScene; }
-
-};
-
+version https://git-lfs.github.com/spec/v1
+oid sha256:acc24d1a0921ddd1af3552f8521ac44ea60fd381c3f6ee26c16a8563d2fa7bcc
+size 410

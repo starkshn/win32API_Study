@@ -1,30 +1,3 @@
-#pragma once
-
-struct Event
-{
-	EVENT_TYPE	_eventType;
-	DWORD_PTR	_objectPtr;
-	DWORD_PTR	_groupType;
-};
-
-class EventManager
-{
-	SINGLE(EventManager)
-
-private:
-	vector<Event> _vecEvents;
-	vector<CObject*> _vecDead;
-
-public:
-	void update();
-
-private:
-	void ExcuteEvent(const Event& event); // 이벤트 처리함수
-
-public:
-	void AddEvent(const Event& event)
-	{
-		_vecEvents.push_back(event);
-	}
-};
-
+version https://git-lfs.github.com/spec/v1
+oid sha256:a59230afb818931d066b46cbc914604d1bc89f3e880ed8d0ea55cbc3cba65963
+size 419

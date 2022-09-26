@@ -1,25 +1,3 @@
-#pragma once
-#include "CObject.h"
-#include "CMonster.h"
-
-class Texture;
-
-class MonsterMissile : public CMonster
-{
-private:
-private:
-	float		_theta; // πÊ«‚
-	Vector2		_dir;   // Vector
-	Texture*	p_monsterMissileTexture;
-
-public:
-	MonsterMissile();
-	~MonsterMissile();
-public:
-	
-private:
-	virtual void update() final;
-	virtual void render(HDC dc) final;
-
-};
-
+version https://git-lfs.github.com/spec/v1
+oid sha256:e28fe213fba753c5ad84b10586c358e66dc16b7df6deded1b28b08906e4685a0
+size 382

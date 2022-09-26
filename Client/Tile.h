@@ -1,34 +1,3 @@
-#pragma once
-#include "CObject.h"
-
-class Texture;
-
-class Tile : public CObject
-{
-private:
-	CLONE(Tile);
-
-public:
-	Tile();
-	virtual ~Tile() override;
-
-private:
-	Texture*	p_tileTexture;
-	int			_tileImageIdx;
-
-private:
-	virtual void update() override;
-	virtual void render(HDC dc) override;
-
-public:
-	void AddImageIdx() { ++_tileImageIdx; };
-
-public:
-	void SetTexture(Texture* tileTexture)
-	{
-		p_tileTexture = tileTexture;
-	}
-
-
-};
-
+version https://git-lfs.github.com/spec/v1
+oid sha256:33a4891190b2ff21911ae258e89b68b4d1e5a80ab73a0a7f59d242a1a9b78bb1
+size 464

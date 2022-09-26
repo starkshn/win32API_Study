@@ -1,29 +1,3 @@
-#include "pch.h"
-#include "Tile.h"
-
-Tile::Tile()
-{
-	SetScale(Vector2(TILE_SIZE, TILE_SIZE));
-}
-
-Tile::~Tile()
-{
-
-}
-void Tile::render(HDC dc)
-{
-	Vector2 renderPos = CameraManager::GetInstance()->GetRenderPos(GetPos());
-	Vector2 scale = GetScale();
-
-	Rectangle
-	(
-		dc,
-		static_cast<int>(renderPos._x),
-		static_cast<int>(renderPos._y),
-		static_cast<int>(renderPos._x + scale._x), static_cast<int>(renderPos._y + scale._y),
-		
-	);
-}
-
-
-
+version https://git-lfs.github.com/spec/v1
+oid sha256:cb4ea14627ec8983ce35799d596bc585b90cf5243c2031e3fc3f2fc97d161a5d
+size 465

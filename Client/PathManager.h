@@ -1,14 +1,3 @@
-#pragma once
-class PathManager
-{
-SINGLE(PathManager);
-
-private:
-	wchar_t _contentsPath[255];
-
-public :
-	void init();
-	const wchar_t* GetContentsPath() { return _contentsPath; }
-
-};
-
+version https://git-lfs.github.com/spec/v1
+oid sha256:6bb88eb17cfd73e2b15988b47ff3a34708fa3f0dcd66a640eddca55f07ff5c21
+size 196

@@ -1,19 +1,3 @@
-﻿#pragma once
-
-class Resources
-{
-private :
-	wstring _strKey; // 리소스 키
-	wstring _strRelativePath; // 리소스 상대경로
-
-public :
-	Resources();
-	virtual ~Resources();
-
-public :
-	void SetKey(const wstring& strkey) { _strKey = strkey; }
-	void SetRelativePath(const wstring& strRelativePath) { _strRelativePath = strRelativePath; }
-
-	const wstring& GetKey() { return _strKey; }
-	const wstring& GetRelativePath() { return _strRelativePath; }
-};
+version https://git-lfs.github.com/spec/v1
+oid sha256:9c43fd2678f433b94274661ecda9ffb8a586ca55b486f3aee2a433c38b23ce60
+size 454
