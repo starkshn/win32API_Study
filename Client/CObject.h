@@ -29,7 +29,7 @@ public:
 
 public:
 	virtual void update() abstract;
-	virtual void finalUpdate() final;
+	virtual void finalUpdate();
 	virtual void render(HDC dc);
 
 	virtual void OnCollisionEnter(Collider* other) {}

@@ -9,6 +9,7 @@
 #include "Resource.h"
 #include "CSceneManager.h"
 #include "CScene.h"
+#include "UI.h"
 
 ToolScene::ToolScene()
 {
@@ -50,6 +51,20 @@ void ToolScene::Enter()
 	// Camera Look 지정
 	Vector2 resolution = CCore::GetInstance()->GetResolution();
 	CameraManager::GetInstance()->SetLookAtPos(resolution / 2.f);
+
+	// UI 하나 테스트 구현 (우측상단에 배치)
+	UI* parentUI = new UI();
+	parentUI->SetScale(Vector2(500.f, 300.f));
+	parentUI->SetPos(Vector2(resolution._x - parentUI->GetScale()._x, 0.f));
+
+	UI* childUI = new UI();
+	childUI->SetScale(Vector2(100.f, 40.f));
+	childUI->SetPos(Vector2(0.f, 0.f));
+
+	parentUI->AddChild(childUI);
+
+	AddObject(parentUI, GROUP_TYPE::UI);
+
 };
 
 void ToolScene::Exit()
@@ -66,13 +81,16 @@ void ToolScene::SetTileIdx()
 		Vector2 mousePos = MOUSE_POS;
 		mousePos = CameraManager::GetInstance()->GetRealPos(mousePos);
 
-		UINT tileXCount = GetTileX();
-		UINT tileYCount = GetTileY();
+		int tileXCount = static_cast<int>(GetTileX());
+		int tileYCount = static_cast<int>(GetTileY());
 
-		UINT col = static_cast<UINT>(mousePos._x / TILE_SIZE);
-		UINT row = static_cast<UINT>(mousePos._y / TILE_SIZE);
+		int col = static_cast<int>(mousePos._x / TILE_SIZE);
+		int row = static_cast<int>(mousePos._y / TILE_SIZE);
 		
 		UINT tileIdx = row * tileXCount + col;
+		
+		if (mousePos._x < 0.f || tileXCount <= col || mousePos._y < 0.f || tileYCount <= row)
+			return;
 		
 		const vector<CObject*>& vecTile = GetGroupObjects(GROUP_TYPE::TILE);
 		dynamic_cast<Tile*>(vecTile[tileIdx])->AddImageIdx();

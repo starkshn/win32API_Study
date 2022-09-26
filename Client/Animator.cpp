@@ -24,6 +24,11 @@ Animator::~Animator()
 
 void Animator::update()
 {
+	
+}
+
+void Animator::finalUpdate()
+{
 	if (nullptr != p_curAnimation)
 	{
 		p_curAnimation->update();
@@ -33,11 +38,6 @@ void Animator::update()
 			p_curAnimation->SetAnimFrame(0);
 		}
 	}
-}
-
-void Animator::finalUpdate()
-{
-
 }
 
 void Animator::render(HDC dc)

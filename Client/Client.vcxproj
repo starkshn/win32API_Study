@@ -196,6 +196,7 @@
     <ClInclude Include="Tile.h" />
     <ClInclude Include="ToolScene.h" />
     <ClInclude Include="SelectGDI.h" />
+    <ClInclude Include="UI.h" />
   </ItemGroup>
   <PropertyGroup>
     <EnableUnitySupport>true</EnableUnitySupport>
@@ -236,6 +237,7 @@
     <ClCompile Include="Tile.cpp" />
     <ClCompile Include="ToolScene.cpp" />
     <ClCompile Include="SelectGDI.cpp" />
+    <ClCompile Include="UI.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Client.rc" />

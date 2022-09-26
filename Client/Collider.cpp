@@ -46,7 +46,6 @@ void Collider::render(HDC dc)
 		pen = HPEN_TYPE::RED;
 	}
 
-
 	SelectGDI b(dc, HBRUSH_TYPE::HOLLOW);
 	SelectGDI p(dc, pen);
 
